@@ -13,6 +13,7 @@
     <string name="gondi_input">यहाँ देवनागरी में गोंडी लिखें</string>
     <string name="speak_button_text">बोलो</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="book_title">अरे, इद सबय बोल तिन्जेतुड</string>
 
     <!-- Temp -->
     <string name="action_add_favourite">Add to Favourites</string>

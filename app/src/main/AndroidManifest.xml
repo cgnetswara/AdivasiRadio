@@ -17,7 +17,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".TypeGondi"></activity>
+        <activity android:name=".Library"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".TypeGondi" />
 
         <service
             android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService"

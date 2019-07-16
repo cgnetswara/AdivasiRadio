@@ -54,6 +54,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
         CardView typeinGondiCardView = findViewById(R.id.typeInGondiCard);
+        CardView libraryCardView = findViewById(R.id.libraryCardView);
 
         mediaSwaraCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +68,14 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TypeGondi.class);
+                startActivity(intent);
+            }
+        });
+
+        libraryCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Library.class);
                 startActivity(intent);
             }
         });
