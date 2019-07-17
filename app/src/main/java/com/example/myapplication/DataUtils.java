@@ -44,4 +44,25 @@ public class DataUtils {
 
     }
 
+    public static ArrayList<BookPage> getBook() {
+
+        ArrayList<BookPage> bookPages = new ArrayList<BookPage>();
+
+        bookPages.add(new BookPage("गेडा तेबातया वेनेहानो अयता|\n" +
+                "बातया वेनेहानो!\n" +
+                "\u0010प तुन साफ़ \u0015कयानता|\n" +
+                "सफ तु\n" +
+                "\u0018ता!\n", R.drawable.page_one));
+        bookPages.add(new BookPage("बासके नरला थाना थ\u0018दाना मार ओ अ\u0018ता ,\n" +
+                "असके सरोज तीजाइनाता ?\n" +
+                "जोगा तीजाइनता!", R.drawable.page_two));
+        bookPages.add(new BookPage("अयोय गेडा पा धी| \n उर\u0014-उर!\u0014 उर\u0014-उर\u0014!",
+                R.drawable.page_three));
+        bookPages.add(new BookPage("असके \u0015गदाला \u0015पटेआनी कोलाया दा \u0015तदाना,\n" +
+                "कारना अ\u0018ता असकेभोर तीजाइ\u0018ता तोर?\n" +
+                "\u0015व सग हानी पूड\u0015यग \u0015त\u0018तागा!\n", R.drawable.page_four));
+
+        return bookPages;
+    }
+
 }
