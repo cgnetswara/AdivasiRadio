@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hang tight whike we load articles..."
+                android:text="@string/loading_tag"
                 android:textColor="#000000"
                 android:textSize="24sp"/>
 
@@ -37,11 +37,21 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.yuyakaido.android.cardstackview.CardStackView
-        android:id="@+id/cardStackView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    </com.yuyakaido.android.cardstackview.CardStackView>
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/cardStackView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.yuyakaido.android.cardstackview.CardStackView>
+
+    </LinearLayout>
+
+
+
 
 </RelativeLayout>

@@ -20,5 +20,7 @@
     <string name="action_play_next">Play Next</string>
     <string name="backdrop_title">ADIVASI RADIO</string>
     <string name="backdrop_subtitle">Listen to articles on CGNet Swara</string>
+    <string name="loading_tag">Hang tight while we load articles...</string>
+    <string name="read_article">Read Article</string>
 
 </resources>

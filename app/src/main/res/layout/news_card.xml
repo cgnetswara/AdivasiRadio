@@ -22,18 +22,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/cgnet_swara" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardHeadingTextView"
                 tools:text="This is the Article heading"
                 android:padding="4dp"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                />3
+                />
             <TextView
                 android:id="@+id/cardArticleTextView"
                 android:layout_width="match_parent"
@@ -45,7 +44,7 @@
                 android:id="@+id/readButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Read Article"
+                android:text="@string/read_article"
                 android:background="#8657c5"
                 />
 
