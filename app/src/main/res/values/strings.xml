@@ -22,5 +22,10 @@
     <string name="backdrop_subtitle">Listen to articles on CGNet Swara</string>
     <string name="loading_tag">Hang tight while we load articles...</string>
     <string name="read_article">Read Article</string>
+    <string name="title_activity_library">Library</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="book_section">Book Section</string>
+    <string name="recent_articles">Recent Articles</string>
 
 </resources>

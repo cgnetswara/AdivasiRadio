@@ -10,9 +10,10 @@ public class CardDetail {
     private String mAudioURL;
     private String mArticleHeading;
     private String mArticle;
+    private String mArticleURL;
     MediaPlayer mediaPlayer;
 
-    CardDetail(String articleHeading, String article, String audioURL) {
+    CardDetail(String articleHeading, String article, String audioURL, String articleURL) {
         mAudioURL = audioURL;
         mArticleHeading = articleHeading;
         mArticle = article;
@@ -22,11 +23,7 @@ public class CardDetail {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    CardDetail(String articleHeading, String article) {
-        mArticleHeading = articleHeading;
-        mArticle = article;
+        mArticleURL = articleURL;
     }
 
     public String getAudioUrl() {
@@ -44,5 +41,7 @@ public class CardDetail {
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;
     }
+
+    public String getArticleURL() { return mArticleURL; }
 
 }

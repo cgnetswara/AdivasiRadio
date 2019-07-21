@@ -83,6 +83,7 @@ public class MediaSwara extends AppCompatActivity {
             @Override
             public void onCardDisappeared(View view, int position) {
                 Log.i("position", position + " " + (cardDetails.size()-1));
+                insertIntoDatabase(cardDetails.get(position));
                 MediaPlayer mediaPlayer = cardDetails.get(position).getMediaPlayer();
                 mediaPlayer.stop();
                 mediaPlayer.release();
@@ -115,6 +116,10 @@ public class MediaSwara extends AppCompatActivity {
 
     }
 
+    public void insertIntoDatabase(CardDetail card) {
+
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -140,7 +145,7 @@ public class MediaSwara extends AppCompatActivity {
                     Element audioLink = e.selectFirst("audio");
                     Log.i("audiooo"  + hLink.text(), audioLink.attr("src"));
                     if (p.size() != 0) {
-                        articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src")));
+                        articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src"), e.select("h3 a[ref]").text()));
                         Log.i("this", hLink.text() + " " + p.get(0).text());
                     }
                 }
