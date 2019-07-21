@@ -19,10 +19,7 @@ public class CardDetail {
     }
 
     public int getImgRscId() {
-        if (mImgRscId == NO_IMAGE) {
-            return -1;
-        }
-        return mImgRscId;
+        return -1;
     }
 
     public String getArticleHeading() {

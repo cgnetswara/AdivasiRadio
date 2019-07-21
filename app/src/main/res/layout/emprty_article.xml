@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MediaSwara">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/loadingCard"
-        android:visibility="gone"
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="5dp"
@@ -36,12 +34,5 @@
 
 
     </androidx.cardview.widget.CardView>
-
-    <com.yuyakaido.android.cardstackview.CardStackView
-        android:id="@+id/cardStackView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </com.yuyakaido.android.cardstackview.CardStackView>
 
 </RelativeLayout>
