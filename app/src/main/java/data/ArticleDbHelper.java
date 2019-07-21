@@ -24,8 +24,9 @@ public class ArticleDbHelper extends SQLiteOpenHelper {
                 + ArticleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ArticleEntry.COLUMN_ARTICLE_URL + " TEXT NOT NULL, "
                 + ArticleEntry.COLUMN_ARTICLE_HEADING + " TEXT NOT NULL, "
-                + ArticleEntry.COLUMN_ARTICLE_CONTENT + " INTEGER NOT NULL, "
-                + ArticleEntry.COLUMN_IS_FAVOURITE + " INTEGER NOT NULL DEFAULT 0);";
+                + ArticleEntry.COLUMN_ARTICLE_CONTENT + " TEXT NOT NULL, "
+                + ArticleEntry.COLUMN_AUDIO_RES_URL + " TEXT NOT NULL, "
+                + ArticleEntry.COLUMN_IS_FAVOURITE + " INTEGER  DEFAULT 0);";
 
         db.execSQL(SQL_CREATE_ARTICLES_TABLE);
 

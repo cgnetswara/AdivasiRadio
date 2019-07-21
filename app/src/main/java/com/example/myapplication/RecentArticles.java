@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
@@ -24,6 +25,7 @@ public class RecentArticles extends AppCompatActivity {
         setContentView(R.layout.activity_recent_articles);
 
         recentArticlesRecyclerView = findViewById(R.id.recentArticlesRecyclerView);
+        recentArticlesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         cardDetails = new ArrayList<CardDetail>();
 
@@ -33,7 +35,7 @@ public class RecentArticles extends AppCompatActivity {
 
         Cursor cursor = db.query(ArticleEntry.TABLE_NAME, null, null, null, null, null, null);
 
-        while(cursor.moveToLast()) {
+        while(cursor.moveToNext()) {
 
             cardDetails.add(new CardDetail(cursor.getString(cursor.getColumnIndex(ArticleEntry.COLUMN_ARTICLE_HEADING)),
                     cursor.getString(cursor.getColumnIndex(ArticleEntry.COLUMN_ARTICLE_CONTENT)),

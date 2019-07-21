@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,6 +37,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.function.UnaryOperator;
 
+import data.ArticleDbHelper;
+import data.DatabaseContract.ArticleEntry;
+
 public class MediaSwara extends AppCompatActivity {
 
     CardStackView cardStackView;
@@ -44,6 +49,7 @@ public class MediaSwara extends AppCompatActivity {
     int pageCount = 1;
     int currentCardPos;
     CardView loadingLayout;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,9 @@ public class MediaSwara extends AppCompatActivity {
         final CardView loadingLayout = findViewById(R.id.loadingCard);
         cardDetails = new ArrayList<CardDetail>();
         loadingLayout.setVisibility(View.VISIBLE);
+
+        ArticleDbHelper dbHelper = new ArticleDbHelper(this);
+        db = dbHelper.getWritableDatabase();
 
         CardStackListener listener = new CardStackListener() {
             @Override
@@ -117,6 +126,14 @@ public class MediaSwara extends AppCompatActivity {
     }
 
     public void insertIntoDatabase(CardDetail card) {
+
+        ContentValues values = new ContentValues();
+        values.put(ArticleEntry.COLUMN_ARTICLE_CONTENT, card.getArticle());
+        values.put(ArticleEntry.COLUMN_ARTICLE_HEADING, card.getArticleHeading());
+        values.put(ArticleEntry.COLUMN_ARTICLE_URL, card.getArticleURL());
+        values.put(ArticleEntry.COLUMN_AUDIO_RES_URL, card.getAudioUrl());
+        long index = db.insert(ArticleEntry.TABLE_NAME, null, values);
+        Log.i("databaseInfo", index + "");
 
     }
 
