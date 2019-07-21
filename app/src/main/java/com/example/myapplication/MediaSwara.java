@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
@@ -37,8 +39,10 @@ public class MediaSwara extends AppCompatActivity {
 
     CardStackView cardStackView;
     public static MediaSwara mediaSwara_activity;
-    ArrayList<CardDetail> cardDetails = DataUtils.getArticles();
-    public String URL = "http://www.cgnetswara.org/";
+    ArrayList<CardDetail> cardDetails;
+    public String BASE_URL = "http://cgnetswara.org/index.php?page=";
+    int pageCount = 1;
+    int currentCardPos;
     CardView loadingLayout;
 
     @Override
@@ -47,6 +51,8 @@ public class MediaSwara extends AppCompatActivity {
         setContentView(R.layout.activity_media_swara);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
+        cardDetails = new ArrayList<CardDetail>();
+        loadingLayout.setVisibility(View.VISIBLE);
 
         CardStackListener listener = new CardStackListener() {
             @Override
@@ -71,12 +77,15 @@ public class MediaSwara extends AppCompatActivity {
 
             @Override
             public void onCardAppeared(View view, int position) {
-
+                currentCardPos = position;
             }
 
             @Override
             public void onCardDisappeared(View view, int position) {
                 Log.i("position", position + " " + (cardDetails.size()-1));
+                MediaPlayer mediaPlayer = cardDetails.get(position).getMediaPlayer();
+                mediaPlayer.stop();
+                mediaPlayer.release();
                 if (position == (cardStackView.getAdapter().getItemCount()-1)) {
                     loadingLayout.setVisibility(View.VISIBLE);
                     PageDownloader downloader = new PageDownloader();
@@ -97,19 +106,22 @@ public class MediaSwara extends AppCompatActivity {
 
         cardStackView.setLayoutManager(cardStackLayoutManager);
 
-
-
 //        ArrayList<CardDetail> cardDetails = new ArrayList<>();
-        if (cardDetails.size() == 0) {
-            setContentView(R.layout.emprty_article);
-        }
 
-
+        PageDownloader downloader = new PageDownloader();
+        downloader.execute();
 
         cardStackView.setAdapter(new NewsCardAdapter(cardDetails));
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MediaPlayer player = cardDetails.get(currentCardPos).getMediaPlayer();
+        player.stop();
+        player.release();
+    }
 
     private class PageDownloader extends AsyncTask<Void, Void, ArrayList<CardDetail>> {
 
@@ -119,21 +131,29 @@ public class MediaSwara extends AppCompatActivity {
             ArrayList<CardDetail> articles = new ArrayList<CardDetail>();
             try {
                 // Connect to the web site
-                Document document = Jsoup.connect(URL).get();
+                Document document = Jsoup.connect(BASE_URL + pageCount).get();
                 // Get the html document articles
                 Elements articleElements = document.getElementsByClass("report");
                 for(Element e: articleElements) {
                     Elements p = e.getElementsByTag("p");
-                    Element hLink = document.selectFirst("h3 a");
+                    Element hLink = e.selectFirst("h3 a");
+                    Element audioLink = e.selectFirst("audio");
+                    Log.i("audiooo"  + hLink.text(), audioLink.attr("src"));
                     if (p.size() != 0) {
-                        articles.add(new CardDetail(hLink.text(), p.get(0).text()));
+                        articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src")));
                         Log.i("this", hLink.text() + " " + p.get(0).text());
                     }
                 }
 
+                Thread.sleep(1000); // To facilate smooth transition
+
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+
             return articles;
         }
 
@@ -142,11 +162,15 @@ public class MediaSwara extends AppCompatActivity {
             super.onPostExecute(nCardDetails);
             try {
                 // if articles length is 0 handle it.
-                cardDetails.clear();
+                int topIndex = cardDetails.size();
                 cardDetails.addAll(nCardDetails);
-                cardStackView.getAdapter().notifyDataSetChanged();
+
+
+
+                cardStackView.getAdapter().notifyItemRangeChanged(topIndex, cardDetails.size()-topIndex);
                 loadingLayout = findViewById(R.id.loadingCard);
                 loadingLayout.setVisibility(View.GONE);
+                pageCount += 1;
             } catch (Exception e) {
                 e.printStackTrace();
             }

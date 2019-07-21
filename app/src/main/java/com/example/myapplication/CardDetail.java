@@ -1,16 +1,27 @@
 package com.example.myapplication;
 
+import android.media.MediaPlayer;
+
+import java.io.IOException;
+
 public class CardDetail {
 
     private final int NO_IMAGE = -1;
-    private int mImgRscId = NO_IMAGE;
+    private String mAudioURL;
     private String mArticleHeading;
     private String mArticle;
+    MediaPlayer mediaPlayer;
 
-    CardDetail(int imageResourceId, String articleHeading, String article) {
-        mImgRscId = imageResourceId;
+    CardDetail(String articleHeading, String article, String audioURL) {
+        mAudioURL = audioURL;
         mArticleHeading = articleHeading;
         mArticle = article;
+        mediaPlayer = new MediaPlayer();
+        try {
+            mediaPlayer.setDataSource(audioURL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     CardDetail(String articleHeading, String article) {
@@ -18,8 +29,8 @@ public class CardDetail {
         mArticle = article;
     }
 
-    public int getImgRscId() {
-        return -1;
+    public String getAudioUrl() {
+        return mAudioURL;
     }
 
     public String getArticleHeading() {
@@ -29,4 +40,9 @@ public class CardDetail {
     public String getArticle() {
         return mArticle;
     }
+
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
 }

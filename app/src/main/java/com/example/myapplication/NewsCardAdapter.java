@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -22,6 +25,7 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
 
     ArrayList<CardDetail> mCardDetailArrayList;
     Dashboard dashboard_activity = Dashboard.getDashboard();
+    MediaPlayer player = new MediaPlayer();
 
     public NewsCardAdapter(ArrayList<CardDetail> cardDetailArrayList) {
         mCardDetailArrayList = cardDetailArrayList;
@@ -69,12 +73,42 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
             articleHeadingTextView.setText(card.getArticleHeading());
             articleTextView.setText(card.getArticle());
 
+
+//            try {
+//                player.release();
+//                player = new MediaPlayer();
+//                player.setDataSource(card.getAudioUrl());
+//                Log.i("audiooo2" + card.getArticleHeading(), card.getAudioUrl());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
             holder.newsCardView.findViewById(R.id.readButton).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dashboard_activity.sayText(card.getArticle(), TextToSpeech.QUEUE_FLUSH);
                 }
             });
+
+
+            final MediaPlayer player = card.getMediaPlayer();
+            cardImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(!player.isPlaying()) {
+                        try {
+                            player.prepare();
+                            player.start();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        player.stop();
+                    }
+                }
+            });
+
         }
 
 
