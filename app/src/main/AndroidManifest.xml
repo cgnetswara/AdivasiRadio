@@ -39,7 +39,8 @@
                 android:resource="@xml/tts_engine" />
         </service>
 
-        <activity android:name=".MediaSwara" />
+        <activity android:name=".MediaSwara"
+            android:parentActivityName=".Dashboard"/>
         <activity
             android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData"
             android:label="@string/flite_voice_manager"

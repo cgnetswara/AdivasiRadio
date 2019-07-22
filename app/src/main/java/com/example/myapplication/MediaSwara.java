@@ -11,10 +11,14 @@ import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
@@ -35,6 +39,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.function.UnaryOperator;
 
 import data.ArticleDbHelper;
@@ -50,11 +55,16 @@ public class MediaSwara extends AppCompatActivity {
     int currentCardPos;
     CardView loadingLayout;
     SQLiteDatabase db;
+    Boolean favourite = false;
+    MenuItem favouriteStar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_swara);
+
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
         cardDetails = new ArrayList<CardDetail>();
@@ -96,6 +106,9 @@ public class MediaSwara extends AppCompatActivity {
                 MediaPlayer mediaPlayer = cardDetails.get(position).getMediaPlayer();
                 mediaPlayer.stop();
                 mediaPlayer.release();
+
+                if (favourite) favouriteStar.setIcon(R.drawable.favourite_icon);
+
                 if (position == (cardStackView.getAdapter().getItemCount()-1)) {
                     loadingLayout.setVisibility(View.VISIBLE);
                     PageDownloader downloader = new PageDownloader();
@@ -123,6 +136,36 @@ public class MediaSwara extends AppCompatActivity {
 
         cardStackView.setAdapter(new NewsCardAdapter(cardDetails));
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.media_swara_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        favouriteStar = item;
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            case R.id.favourite_button:
+                if (!favourite) {
+                    item.setIcon(R.drawable.favourite_selected_icon);
+                    favourite = true;
+                } else {
+                    item.setIcon(R.drawable.favourite_icon);
+                    favourite = false;
+                }
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void insertIntoDatabase(CardDetail card) {
