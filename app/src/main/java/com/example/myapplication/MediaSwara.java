@@ -120,7 +120,7 @@ public class MediaSwara extends AppCompatActivity {
                 Log.i("position", position + " " + (cardDetails.size()-1));
                 insertIntoDatabase(cardDetails.get(position));
                 mediaPlayer.stop();
-                currImageView.setImageResource(R.drawable.play_button);
+                if (currImageView != null) currImageView.setImageResource(R.drawable.play_button);
                 playerInitialised = false;
 
                 if (favourite) favouriteStar.setIcon(R.drawable.favourite_icon);
@@ -211,6 +211,11 @@ public class MediaSwara extends AppCompatActivity {
         values.put(ArticleEntry.COLUMN_ARTICLE_HEADING, card.getArticleHeading());
         values.put(ArticleEntry.COLUMN_ARTICLE_URL, card.getArticleURL());
         values.put(ArticleEntry.COLUMN_AUDIO_RES_URL, card.getAudioUrl());
+        if (favourite) {
+            values.put(ArticleEntry.COLUMN_IS_FAVOURITE, 1);
+        } else {
+            values.put(ArticleEntry.COLUMN_IS_FAVOURITE, 0);
+        }
         long index = db.insert(ArticleEntry.TABLE_NAME, null, values);
         Log.i("databaseInfo", index + "");
 
