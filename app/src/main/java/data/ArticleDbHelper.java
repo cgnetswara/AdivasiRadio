@@ -25,7 +25,7 @@ public class ArticleDbHelper extends SQLiteOpenHelper {
                 + ArticleEntry.COLUMN_ARTICLE_URL + " TEXT NOT NULL, "
                 + ArticleEntry.COLUMN_ARTICLE_HEADING + " TEXT NOT NULL, "
                 + ArticleEntry.COLUMN_ARTICLE_CONTENT + " TEXT NOT NULL, "
-                + ArticleEntry.COLUMN_AUDIO_RES_URL + " TEXT NOT NULL, "
+                + ArticleEntry.COLUMN_AUDIO_RES_URL + " TEXT UNIQUE NOT NULL, "
                 + ArticleEntry.COLUMN_IS_FAVOURITE + " INTEGER  DEFAULT 0);";
 
         db.execSQL(SQL_CREATE_ARTICLES_TABLE);

@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".RecentArticles"></activity>
+        <activity android:name=".history_card_detail"></activity>
+        <activity android:name=".RecentArticles" />
         <activity android:name=".Library" />
         <activity android:name=".BookRead" />
         <activity
@@ -39,8 +40,9 @@
                 android:resource="@xml/tts_engine" />
         </service>
 
-        <activity android:name=".MediaSwara"
-            android:parentActivityName=".Dashboard"/>
+        <activity
+            android:name=".MediaSwara"
+            android:parentActivityName=".Dashboard" />
         <activity
             android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData"
             android:label="@string/flite_voice_manager"
