@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +26,6 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
 
     ArrayList<CardDetail> mCardDetailArrayList;
     private Dashboard dashboard_activity = Dashboard.getDashboard();
-    MediaPlayer player = new MediaPlayer();
 
     public NewsCardAdapter(ArrayList<CardDetail> cardDetailArrayList) {
         mCardDetailArrayList = cardDetailArrayList;
@@ -69,19 +69,22 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
             TextView articleHeadingTextView = holder.newsCardView.findViewById(R.id.cardHeadingTextView);
             TextView articleTextView = holder.newsCardView.findViewById(R.id.cardArticleTextView);
             final ImageView playPauseImageView = holder.newsCardView.findViewById(R.id.playPauseImageView);
+            final ImageView[] targetImageView = new ImageView[1];
 
             final CardDetail card = mCardDetailArrayList.get(position);
             articleHeadingTextView.setText(card.getArticleHeading());
             articleTextView.setText(card.getArticle());
 
-            final MediaPlayer player = card.getMediaPlayer();
+            final MediaPlayer player = MediaSwara.mediaPlayer;
 
             player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
+                    ImageView imageView = MediaSwara.currImageView;
+                    imageView.setTag(dashboard_activity.getString(R.string.pause_tag));
+                    imageView.setImageResource(R.drawable.pause_button);
+                    Log.i("ImageChange", "should change");
                     player.start();
-                    playPauseImageView.setTag(dashboard_activity.getString(R.string.pause_tag));
-                    playPauseImageView.setImageResource(R.drawable.pause_button);
                 }
             });
 
@@ -90,9 +93,19 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
                 public void onClick(View view) {
 
                     if(playPauseImageView.getTag().toString().equals(dashboard_activity.getString(R.string.play_tag))) {
-                        player.prepareAsync();
+                        if (!MediaSwara.playerInitialised) {
+                            try {
+                                player.reset();
+                                player.setDataSource(card.getAudioUrl());
+                                MediaSwara.playerInitialised = true;
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        MediaSwara.currImageView = playPauseImageView;
                         playPauseImageView.setImageResource(R.drawable.audio_loading);
-                        playPauseImageView.setTag(dashboard_activity.getString(R.string.loading_tag));
+                        playPauseImageView.setTag(dashboard_activity.getString(R.string.loading_audio_tag));
+                        player.prepareAsync();
                     }
                     else if (playPauseImageView.getTag().toString().equals(dashboard_activity.getString(R.string.pause_tag))) {
                         player.stop();
@@ -115,23 +128,10 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
 //                e.printStackTrace();
 //            }
 
-            holder.newsCardView.findViewById(R.id.readButton).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dashboard_activity.sayText(card.getArticle(), TextToSpeech.QUEUE_FLUSH);
-                }
-            });
 
 
 
 
-            cardImageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-
-                }
-            });
 
         }
 

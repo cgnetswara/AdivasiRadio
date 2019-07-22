@@ -53,16 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:padding="4dp"
+                android:padding="16dp"
                 tools:text="This is Article body."
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-            <Button
-                android:id="@+id/readButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/read_article"
-                android:background="#8657c5"
-                />
+
 
         </LinearLayout>
 

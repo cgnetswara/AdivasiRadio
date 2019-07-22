@@ -45,9 +45,36 @@
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/cardStackView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_weight="1"
+            android:layout_height="0dp">
 
         </com.yuyakaido.android.cardstackview.CardStackView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/backwardArrow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/backward_arrow"/>
+            <ImageView
+                android:id="@+id/ttsButtonImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/tts_icon"/>
+            <ImageView
+                android:id="@+id/forwardArrow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/forward_arrow"/>
+        </LinearLayout>
 
     </LinearLayout>
 

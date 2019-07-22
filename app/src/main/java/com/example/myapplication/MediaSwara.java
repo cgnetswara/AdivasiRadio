@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
@@ -22,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
@@ -45,6 +47,8 @@ import java.util.function.UnaryOperator;
 import data.ArticleDbHelper;
 import data.DatabaseContract.ArticleEntry;
 
+import static com.example.myapplication.Dashboard.dashboard_activity;
+
 public class MediaSwara extends AppCompatActivity {
 
     CardStackView cardStackView;
@@ -52,11 +56,17 @@ public class MediaSwara extends AppCompatActivity {
     ArrayList<CardDetail> cardDetails;
     public String BASE_URL = "http://cgnetswara.org/index.php?page=";
     int pageCount = 1;
-    int currentCardPos;
+    static int currentCardPos;
     CardView loadingLayout;
     SQLiteDatabase db;
     Boolean favourite = false;
     MenuItem favouriteStar;
+    ImageView forwardButtonImageView;
+    ImageView backwardButtonImageView;
+    ImageView ttsButtonImageView;
+    public static MediaPlayer mediaPlayer;
+    public static ImageView currImageView;
+    static Boolean playerInitialised = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +77,12 @@ public class MediaSwara extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
+        forwardButtonImageView = findViewById(R.id.forwardArrow);
+        backwardButtonImageView = findViewById(R.id.backwardArrow);
+        ttsButtonImageView = findViewById(R.id.ttsButtonImageView);
+
+        mediaPlayer = new MediaPlayer();
+
         cardDetails = new ArrayList<CardDetail>();
         loadingLayout.setVisibility(View.VISIBLE);
 
@@ -103,9 +119,9 @@ public class MediaSwara extends AppCompatActivity {
             public void onCardDisappeared(View view, int position) {
                 Log.i("position", position + " " + (cardDetails.size()-1));
                 insertIntoDatabase(cardDetails.get(position));
-                MediaPlayer mediaPlayer = cardDetails.get(position).getMediaPlayer();
                 mediaPlayer.stop();
-                mediaPlayer.release();
+                currImageView.setImageResource(R.drawable.play_button);
+                playerInitialised = false;
 
                 if (favourite) favouriteStar.setIcon(R.drawable.favourite_icon);
 
@@ -123,13 +139,33 @@ public class MediaSwara extends AppCompatActivity {
 
 
         CardStackLayoutManager cardStackLayoutManager =  new CardStackLayoutManager(this, listener);
-        cardStackLayoutManager.setCanScrollHorizontal(false);
         cardStackLayoutManager.setDirections(Direction.VERTICAL);
         cardStackLayoutManager.setCanScrollVertical(true);
 
         cardStackView.setLayoutManager(cardStackLayoutManager);
 
 //        ArrayList<CardDetail> cardDetails = new ArrayList<>();
+
+        forwardButtonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardStackView.swipe();
+            }
+        });
+
+        backwardButtonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardStackView.rewind();
+            }
+        });
+
+        ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+            }
+        });
 
         PageDownloader downloader = new PageDownloader();
         downloader.execute();
@@ -183,9 +219,8 @@ public class MediaSwara extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        MediaPlayer player = cardDetails.get(currentCardPos).getMediaPlayer();
-        player.stop();
-        player.release();
+        mediaPlayer.stop();
+        mediaPlayer.release();
     }
 
     private class PageDownloader extends AsyncTask<Void, Void, ArrayList<CardDetail>> {
