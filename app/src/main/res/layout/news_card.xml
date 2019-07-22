@@ -17,12 +17,27 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/cardImageTextView"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:src="@drawable/cgnet_swara" />
+                android:layout_weight="1">
+                
+                <ImageView
+                    android:id="@+id/cardImageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cgnet_swara" />
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/playPauseImageView"
+                    android:tag="@string/play_tag"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/play_button"
+                    android:layout_centerInParent="true"/>
+                
+                
+            </RelativeLayout>
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,6 +54,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:padding="4dp"
+                tools:text="This is Article body."
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
             <Button
                 android:id="@+id/readButton"

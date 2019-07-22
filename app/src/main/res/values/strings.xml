@@ -27,5 +27,8 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="book_section">Book Section</string>
     <string name="recent_articles">Recent Articles</string>
+    <string name="play_tag">play</string>
+    <string name="loading_text">loading_text</string>
+    <string name="pause_tag">pause_tag</string>
 
 </resources>

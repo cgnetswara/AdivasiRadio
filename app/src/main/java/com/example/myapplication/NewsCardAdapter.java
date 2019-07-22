@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHolderView> {
 
     ArrayList<CardDetail> mCardDetailArrayList;
-    Dashboard dashboard_activity = Dashboard.getDashboard();
+    private Dashboard dashboard_activity = Dashboard.getDashboard();
     MediaPlayer player = new MediaPlayer();
 
     public NewsCardAdapter(ArrayList<CardDetail> cardDetailArrayList) {
@@ -68,10 +68,42 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
             ImageView cardImageView = holder.newsCardView.findViewById(R.id.cardImageTextView);
             TextView articleHeadingTextView = holder.newsCardView.findViewById(R.id.cardHeadingTextView);
             TextView articleTextView = holder.newsCardView.findViewById(R.id.cardArticleTextView);
+            final ImageView playPauseImageView = holder.newsCardView.findViewById(R.id.playPauseImageView);
 
             final CardDetail card = mCardDetailArrayList.get(position);
             articleHeadingTextView.setText(card.getArticleHeading());
             articleTextView.setText(card.getArticle());
+
+            final MediaPlayer player = card.getMediaPlayer();
+
+            player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    player.start();
+                    playPauseImageView.setTag(dashboard_activity.getString(R.string.pause_tag));
+                    playPauseImageView.setImageResource(R.drawable.pause_button);
+                }
+            });
+
+            playPauseImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(playPauseImageView.getTag().toString().equals(dashboard_activity.getString(R.string.play_tag))) {
+                        player.prepareAsync();
+                        playPauseImageView.setImageResource(R.drawable.audio_loading);
+                        playPauseImageView.setTag(dashboard_activity.getString(R.string.loading_tag));
+                    }
+                    else if (playPauseImageView.getTag().toString().equals(dashboard_activity.getString(R.string.pause_tag))) {
+                        player.stop();
+                        playPauseImageView.setImageResource(R.drawable.play_button);
+                        playPauseImageView.setTag(dashboard_activity.getString(R.string.play_tag));
+                    }
+
+                }
+            });
+
+
 
 
 //            try {
@@ -91,21 +123,13 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
             });
 
 
-            final MediaPlayer player = card.getMediaPlayer();
+
+
             cardImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    if(!player.isPlaying()) {
-                        try {
-                            player.prepare();
-                            player.start();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        player.stop();
-                    }
+
                 }
             });
 
