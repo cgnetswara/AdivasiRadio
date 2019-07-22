@@ -1,15 +1,23 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import data.ArticleDbHelper;
+import data.DatabaseContract;
+import data.DatabaseContract.ArticleEntry;
 
 public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAdapter.ArticleViewHolder> {
 
@@ -44,6 +52,7 @@ public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAd
         final CardDetail card = cardDetails.get(position);
         String heading = card.getArticleHeading();
         TextView textView = holder.itemView.findViewById(R.id.articleHeading);
+        Button deleteButton = holder.itemView.findViewById(R.id.delete_button);
         textView.setText(heading);
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +66,26 @@ public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAd
 
             }
         });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArticleDbHelper dbHelper = new ArticleDbHelper(holder.parent.getContext());
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                String selection = ArticleEntry.COLUMN_ARTICLE_URL + "=?";
+                String[] selectionArgs = { card.getArticleURL()};
+                int deletedRows = db.delete(ArticleEntry.TABLE_NAME, selection, selectionArgs);
+
+                Log.i("deletedd", deletedRows + "");
+
+                Toast.makeText(holder.parent.getContext(), "Article deleted", Toast.LENGTH_LONG).show();
+                RecentArticles.adapter.notifyDataSetChanged();
+                cardDetails.remove(position);
+
+            }
+        });
+
 
     }
 

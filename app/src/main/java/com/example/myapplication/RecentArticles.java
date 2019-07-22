@@ -16,8 +16,9 @@ import data.DatabaseContract.ArticleEntry;
 
 public class RecentArticles extends AppCompatActivity {
 
-    ArrayList<CardDetail> cardDetails;
+    static ArrayList<CardDetail> cardDetails;
     RecyclerView recentArticlesRecyclerView;
+    static ArticleHistoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class RecentArticles extends AppCompatActivity {
 
         }
 
-        ArticleHistoryAdapter adapter = new ArticleHistoryAdapter(cardDetails);
+        adapter = new ArticleHistoryAdapter(cardDetails);
         recentArticlesRecyclerView.setAdapter(adapter);
 
 
