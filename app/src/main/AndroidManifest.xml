@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".history_card_detail"></activity>
+        <activity android:name=".History_card_detail"></activity>
         <activity android:name=".RecentArticles" />
         <activity android:name=".Library" />
         <activity android:name=".BookRead" />
