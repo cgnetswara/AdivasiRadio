@@ -17,16 +17,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <include layout="@layout/toolbar_productpage"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-                
-                <ImageView
-                    android:id="@+id/cardImageTextView"
+                android:layout_weight="1.25">
+
+                <com.github.florent37.arclayout.ArcLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/cgnet_swara" />
+                    android:layout_height="370dp"
+                    app:arc_cropDirection="cropInside"
+                    app:elevation="10dp"
+                    android:layout_marginBottom="20dp"
+                    app:arc_height="14dp">
+
+                    <ImageView
+                        android:id="@+id/cardImageTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cgnet_swara_condensed"
+                        android:scaleType="fitXY"/>
+
+                </com.github.florent37.arclayout.ArcLayout>
+                
+
                 <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/playPauseImageView"
                     android:tag="@string/play_tag"
@@ -37,13 +52,14 @@
                 
                 
             </RelativeLayout>
+
             
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardHeadingTextView"
                 tools:text="This is the Article heading"
-                android:padding="4dp"
+                android:padding="16dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#000000"

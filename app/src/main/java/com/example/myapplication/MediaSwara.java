@@ -25,6 +25,7 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toolbar;
 
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
@@ -74,8 +75,11 @@ public class MediaSwara extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_swara);
 
+        androidx.appcompat.widget.Toolbar myToolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_media_swara);
+        setSupportActionBar(myToolbar);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
         forwardButtonImageView = findViewById(R.id.forwardArrow);
@@ -185,6 +189,8 @@ public class MediaSwara extends AppCompatActivity {
         cardStackView.setAdapter(new NewsCardAdapter(cardDetails));
 
     }
+
+
 
 
     @Override

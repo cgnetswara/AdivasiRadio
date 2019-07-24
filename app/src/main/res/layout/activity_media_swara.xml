@@ -42,6 +42,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/cardStackView"
             android:layout_width="match_parent"
@@ -49,6 +50,7 @@
             android:layout_height="0dp">
 
         </com.yuyakaido.android.cardstackview.CardStackView>
+
 
         <LinearLayout
             android:layout_width="match_parent"
