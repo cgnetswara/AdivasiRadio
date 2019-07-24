@@ -37,7 +37,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/cgnet_swara_condensed"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        android:background="#bdd9dd"/>
 
                 </com.github.florent37.arclayout.ArcLayout>
                 
