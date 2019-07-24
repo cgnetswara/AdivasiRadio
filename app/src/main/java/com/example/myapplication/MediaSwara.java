@@ -67,6 +67,7 @@ public class MediaSwara extends AppCompatActivity {
     public static MediaPlayer mediaPlayer;
     public static ImageView currImageView;
     static Boolean playerInitialised = false;
+    Boolean TTS_On = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +121,9 @@ public class MediaSwara extends AppCompatActivity {
                 Log.i("position", position + " " + (cardDetails.size()-1));
                 insertIntoDatabase(cardDetails.get(position));
                 mediaPlayer.stop();
+                dashboard_activity.stopSpeaking();
+                ttsButtonImageView.setImageResource(R.drawable.tts_icon);
+                TTS_On = false;
                 if (currImageView != null) currImageView.setImageResource(R.drawable.play_button);
                 playerInitialised = false;
 
@@ -163,7 +167,15 @@ public class MediaSwara extends AppCompatActivity {
         ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+                if (!TTS_On) {
+                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+                    ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
+                    TTS_On = true;
+                } else{
+                    ttsButtonImageView.setImageResource(R.drawable.tts_icon);
+                    dashboard_activity.stopSpeaking();
+                    TTS_On = false;
+                }
             }
         });
 
@@ -226,6 +238,7 @@ public class MediaSwara extends AppCompatActivity {
         super.onStop();
         mediaPlayer.stop();
         mediaPlayer.release();
+        dashboard_activity.stopSpeaking();
     }
 
     private class PageDownloader extends AsyncTask<Void, Void, ArrayList<CardDetail>> {

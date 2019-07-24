@@ -36,15 +36,19 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
-import android.os.Environment;
-import android.util.Log;
-
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
+
+import android.content.res.AssetManager;
+import android.os.Environment;
+import android.util.Log;
+
+import com.example.myapplication.Dashboard;
 
 public class Voice {
 	private final static String LOG_TAG = "Flite_Java_" + Voice.class.getSimpleName();
@@ -179,7 +183,6 @@ public class Voice {
 		else {
 			Log.e(LOG_TAG,"Voice file found, but MD5 sum incorrect. Found" +
 					sb.toString() + ". Expected: " + mVoiceMD5);
-			mIsVoiceAvailable = true;
 			return;
 		}
 	}

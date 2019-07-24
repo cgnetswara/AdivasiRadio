@@ -36,17 +36,16 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
-import android.util.Log;
-
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import android.util.Log;
 
 public class FileDownloader {
-	private final static String LOG_TAG = "Flite_Java_" + FileDownloader.class.getSimpleName();
+	private final static String LOG_TAG = "Flite_Java_" + FileDownloader.class.getSimpleName();	
 	public int totalFileLength = 0;
 	public int finishedFileLength;
 

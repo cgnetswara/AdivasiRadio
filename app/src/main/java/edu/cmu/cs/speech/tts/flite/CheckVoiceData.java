@@ -36,17 +36,17 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 
 /* Checks if the voice data is installed
  * for flite
@@ -112,7 +112,7 @@ public class CheckVoiceData extends Activity {
 		 */
 		if(!Utility.pathExists(VOICE_LIST_FILE)) {
 			try {
-				Log.e(LOG_TAG, "Voice list not found, creating dummy list.");
+				Log.w(LOG_TAG, "Voice list not found, creating dummy list.");
 				BufferedWriter out = new BufferedWriter(new FileWriter(VOICE_LIST_FILE));
 				out.write("hi-IND-female_axb");
 				out.close();

@@ -36,11 +36,13 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
+import java.io.File;
+import java.util.ArrayList;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.app.ListActivity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.BroadcastReceiver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -51,15 +53,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
-
-import java.io.File;
-import java.util.ArrayList;
 
 /* Download user-requested voice data for Flite
  * 
@@ -149,7 +150,7 @@ public class DownloadVoiceData extends ListActivity {
 
 			if (mVoiceList.isEmpty()) {
 				Intent intent = new Intent(mContext, CheckVoiceData.class);
-				startActivity(intent);
+		        startActivity(intent);
 			}
 		}
 

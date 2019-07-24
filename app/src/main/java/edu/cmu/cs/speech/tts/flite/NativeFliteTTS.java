@@ -36,10 +36,11 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
-import android.content.Context;
-import android.util.Log;
-
 import java.io.File;
+
+import android.content.Context;
+import android.os.Environment;
+import android.util.Log;
 
 public class NativeFliteTTS {
 	private final static String LOG_TAG = "Flite_Java_" + NativeFliteTTS.class.getSimpleName();

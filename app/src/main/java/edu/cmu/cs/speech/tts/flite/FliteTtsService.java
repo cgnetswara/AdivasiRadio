@@ -36,6 +36,7 @@
 
 package edu.cmu.cs.speech.tts.flite;
 
+import edu.cmu.cs.speech.tts.flite.NativeFliteTTS.SynthReadyCallback;
 import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -45,8 +46,6 @@ import android.speech.tts.SynthesisCallback;
 import android.speech.tts.SynthesisRequest;
 import android.speech.tts.TextToSpeechService;
 import android.util.Log;
-
-import edu.cmu.cs.speech.tts.flite.NativeFliteTTS.SynthReadyCallback;
 
 /**
  * Implements the Flite Engine as a TextToSpeechService

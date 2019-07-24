@@ -132,6 +132,8 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
         mTts.stop();
     }
 
+
+
     public void sayText(String text, int mode) {
         Log.v(LOG_TAG, "Speaking: " + text);
 
