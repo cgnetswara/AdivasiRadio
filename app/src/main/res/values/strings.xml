@@ -31,5 +31,6 @@
     <string name="loading_text">loading_text</string>
     <string name="pause_tag">pause_tag</string>
     <string name="loading_audio_tag">loading_audio_tag</string>
+    <string name="favouritesSectionName">Favourites</string>
 
 </resources>

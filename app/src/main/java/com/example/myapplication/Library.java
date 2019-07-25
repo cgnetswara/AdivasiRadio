@@ -16,6 +16,7 @@ public class Library extends AppCompatActivity {
 
         Button bookButton = findViewById(R.id.bookButton);
         Button articleButton = findViewById(R.id.articleButton);
+        Button favouriteSection = findViewById(R.id.favouriteSection);
 
         bookButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +33,16 @@ public class Library extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        favouriteSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FavouritesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

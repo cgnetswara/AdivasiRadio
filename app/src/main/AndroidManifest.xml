@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".FavouritesActivity"></activity>
+        <activity android:name=".Dashboard" />
         <activity android:name=".History_card_detail" />
         <activity android:name=".RecentArticles" />
         <activity android:name=".Library" />
@@ -64,7 +65,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
