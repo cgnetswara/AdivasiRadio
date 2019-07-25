@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".History_card_detail"></activity>
+        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".History_card_detail" />
         <activity android:name=".RecentArticles" />
         <activity android:name=".Library" />
         <activity android:name=".BookRead" />
@@ -42,8 +43,8 @@
 
         <activity
             android:name=".MediaSwara"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".Dashboard" />
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData"
             android:label="@string/flite_voice_manager"
@@ -63,16 +64,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dashboard">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Legacy Code for pre-ICS compatibility -->
-
+        </activity> <!-- Legacy Code for pre-ICS compatibility -->
         <activity
             android:name="edu.cmu.cs.speech.tts.flite.Flite"
             android:enabled="true"
@@ -89,7 +88,6 @@
         <provider
             android:name="edu.cmu.cs.speech.tts.flite.providers.SettingsProvider"
             android:authorities="edu.cmu.cs.speech.tts.flite.providers.SettingsProvider" />
-
     </application>
 
 </manifest>
