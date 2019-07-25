@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +15,9 @@ public class Library extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-        Button bookButton = findViewById(R.id.bookButton);
-        Button articleButton = findViewById(R.id.articleButton);
-        Button favouriteSection = findViewById(R.id.favouriteSection);
+        CardView bookButton = findViewById(R.id.bookCardView);
+        CardView articleButton = findViewById(R.id.recentCardView);
+        CardView favouriteSection = findViewById(R.id.favouriteCardView);
 
         bookButton.setOnClickListener(new View.OnClickListener() {
             @Override
