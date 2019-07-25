@@ -82,9 +82,9 @@ public class MediaSwara extends AppCompatActivity {
         //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
-        forwardButtonImageView = findViewById(R.id.forwardArrow);
-        backwardButtonImageView = findViewById(R.id.backwardArrow);
-        ttsButtonImageView = findViewById(R.id.ttsButtonImageView);
+//        forwardButtonImageView = findViewById(R.id.forwardArrow);
+//        backwardButtonImageView = findViewById(R.id.backwardArrow);
+//        ttsButtonImageView = findViewById(R.id.ttsButtonImageView);
 
         mediaPlayer = new MediaPlayer();
 
@@ -154,34 +154,34 @@ public class MediaSwara extends AppCompatActivity {
 
 //        ArrayList<CardDetail> cardDetails = new ArrayList<>();
 
-        forwardButtonImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardStackView.swipe();
-            }
-        });
-
-        backwardButtonImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardStackView.rewind();
-            }
-        });
-
-        ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!TTS_On) {
-                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
-                    ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
-                    TTS_On = true;
-                } else{
-                    ttsButtonImageView.setImageResource(R.drawable.tts_icon);
-                    dashboard_activity.stopSpeaking();
-                    TTS_On = false;
-                }
-            }
-        });
+//        forwardButtonImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cardStackView.swipe();
+//            }
+//        });
+//
+//        backwardButtonImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cardStackView.rewind();
+//            }
+//        });
+//
+//        ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (!TTS_On) {
+//                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+//                    ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
+//                    TTS_On = true;
+//                } else{
+//                    ttsButtonImageView.setImageResource(R.drawable.tts_icon);
+//                    dashboard_activity.stopSpeaking();
+//                    TTS_On = false;
+//                }
+//            }
+//        });
 
         PageDownloader downloader = new PageDownloader();
         downloader.execute();

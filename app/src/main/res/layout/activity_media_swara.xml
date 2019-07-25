@@ -55,27 +55,51 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F5F5F5"
+            android:background="#ffffff"
             android:orientation="horizontal"
             android:gravity="center">
-            <ImageView
-                android:id="@+id/backwardArrow"
-                android:layout_width="0dp"
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/backward_arrow"/>
-            <ImageView
-                android:id="@+id/ttsButtonImageView"
-                android:layout_width="0dp"
+                android:src="@drawable/backward_arrow"
+                android:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/tts_icon"/>
-            <ImageView
-                android:id="@+id/forwardArrow"
-                android:layout_width="0dp"
+                android:src="@drawable/tts_icon"
+                android:layout_marginHorizontal="40dp"
+                app:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/forward_arrow"/>
+                android:src="@drawable/forward_arrow"
+                android:layout_margin="12dp"
+                android:backgroundTint="#D1C4E9"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/backwardArrow"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/backward_arrow"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/ttsButtonImageView"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/tts_icon"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/forwardArrow"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/forward_arrow"/>-->
         </LinearLayout>
 
     </LinearLayout>

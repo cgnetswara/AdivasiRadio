@@ -37,8 +37,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/cgnet_swara_condensed"
-                        android:scaleType="fitXY"
-                        android:background="#bdd9dd"/>
+                        android:scaleType="fitCenter"
+                        android:background="#E3F2FD
+
+"/>
 
                 </com.github.florent37.arclayout.ArcLayout>
                 
@@ -65,14 +67,21 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 />
-            <TextView
-                android:id="@+id/cardArticleTextView"
+            <com.github.florent37.arclayout.ArcLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
-                android:padding="16dp"
-                tools:text="This is Article body."
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/cardArticleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    tools:text="This is Article body."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+
+            </com.github.florent37.arclayout.ArcLayout>
 
 
         </LinearLayout>

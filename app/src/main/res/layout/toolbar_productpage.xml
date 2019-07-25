@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="#bdd9dd"
+    android:background="#E3F2FD
+"
     android:id="@+id/toolbar_media_swara">
 
     <ImageView
