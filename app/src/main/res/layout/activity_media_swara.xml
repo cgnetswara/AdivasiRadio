@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MediaSwara">
 
     <androidx.cardview.widget.CardView
@@ -42,6 +43,35 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD
+"
+            android:id="@+id/toolbar_media_swara">
+
+            <ImageView
+                android:id="@+id/backActivityImageView"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_left_arrow"/>
+
+
+
+            <ImageView
+                android:id="@+id/favourite_button1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_heart"
+                android:layout_gravity="end"
+                android:layout_marginRight="20dp" />
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
 
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/cardStackView"
@@ -60,6 +90,7 @@
             android:gravity="center">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backwardArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/backward_arrow"
@@ -68,6 +99,7 @@
 
                 />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ttsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/tts_icon"
@@ -76,6 +108,7 @@
                 android:layout_margin="12dp"
                 />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/forwardArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/forward_arrow"

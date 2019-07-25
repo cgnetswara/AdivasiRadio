@@ -1,8 +1,6 @@
 package com.example.myapplication;
 
-import android.app.ProgressDialog;
 import android.content.ContentValues;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,26 +10,18 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.NavUtils;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.view.DragEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toolbar;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.Direction;
-import com.yuyakaido.android.cardstackview.internal.CardStackDataObserver;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -40,10 +30,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.function.UnaryOperator;
 
 import data.ArticleDbHelper;
 import data.DatabaseContract.ArticleEntry;
@@ -62,11 +48,13 @@ public class MediaSwara extends AppCompatActivity {
     SQLiteDatabase db;
     Boolean favourite = false;
     MenuItem favouriteStar;
-    ImageView forwardButtonImageView;
-    ImageView backwardButtonImageView;
-    ImageView ttsButtonImageView;
+    FloatingActionButton forwardButtonFloating;
+    FloatingActionButton backwardButtonFloating;
+    FloatingActionButton ttsButtonImageView;
     public static MediaPlayer mediaPlayer;
     public static ImageView currImageView;
+    ImageView backActivityImageView;
+    ImageView favouriteButton;
     static Boolean playerInitialised = false;
     Boolean TTS_On = false;
 
@@ -75,16 +63,15 @@ public class MediaSwara extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_swara);
 
-        androidx.appcompat.widget.Toolbar myToolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_media_swara);
-        setSupportActionBar(myToolbar);
-
 
         //Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         final CardView loadingLayout = findViewById(R.id.loadingCard);
-//        forwardButtonImageView = findViewById(R.id.forwardArrow);
-//        backwardButtonImageView = findViewById(R.id.backwardArrow);
-//        ttsButtonImageView = findViewById(R.id.ttsButtonImageView);
+        forwardButtonFloating = findViewById(R.id.forwardArrow);
+        backwardButtonFloating = findViewById(R.id.backwardArrow);
+        ttsButtonImageView = findViewById(R.id.ttsButton);
+        backActivityImageView = findViewById(R.id.backActivityImageView);
+        favouriteButton = findViewById(R.id.favourite_button1);
 
         mediaPlayer = new MediaPlayer();
 
@@ -117,7 +104,16 @@ public class MediaSwara extends AppCompatActivity {
 
             @Override
             public void onCardAppeared(View view, int position) {
+
                 currentCardPos = position;
+                CardDetail card = cardDetails.get(position);
+                favourite = card.getIs_favourite();
+                Log.i("I am inside", favourite + "");
+                if (card.getIs_favourite()) {
+                    favouriteButton.setImageResource(R.drawable.ic_like_1);
+                } else {
+                    favouriteButton.setImageResource(R.drawable.ic_heart);
+                }
             }
 
             @Override
@@ -130,8 +126,6 @@ public class MediaSwara extends AppCompatActivity {
                 TTS_On = false;
                 if (currImageView != null) currImageView.setImageResource(R.drawable.play_button);
                 playerInitialised = false;
-
-                if (favourite) favouriteStar.setIcon(R.drawable.favourite_icon);
 
                 if (position == (cardStackView.getAdapter().getItemCount()-1)) {
                     loadingLayout.setVisibility(View.VISIBLE);
@@ -152,36 +146,55 @@ public class MediaSwara extends AppCompatActivity {
 
         cardStackView.setLayoutManager(cardStackLayoutManager);
 
-//        ArrayList<CardDetail> cardDetails = new ArrayList<>();
+        forwardButtonFloating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardStackView.swipe();
+            }
+        });
 
-//        forwardButtonImageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardStackView.swipe();
-//            }
-//        });
-//
-//        backwardButtonImageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardStackView.rewind();
-//            }
-//        });
-//
-//        ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (!TTS_On) {
-//                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
-//                    ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
-//                    TTS_On = true;
-//                } else{
-//                    ttsButtonImageView.setImageResource(R.drawable.tts_icon);
-//                    dashboard_activity.stopSpeaking();
-//                    TTS_On = false;
-//                }
-//            }
-//        });
+        backwardButtonFloating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardStackView.rewind();
+            }
+        });
+
+        ttsButtonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!TTS_On) {
+                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+                    ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
+                    TTS_On = true;
+                } else{
+                    ttsButtonImageView.setImageResource(R.drawable.tts_icon);
+                    dashboard_activity.stopSpeaking();
+                    TTS_On = false;
+                }
+            }
+        });
+
+
+        favouriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!favourite) {
+                    favouriteButton.setImageResource(R.drawable.ic_like_1);
+                    favourite = true;
+                } else {
+                    favouriteButton.setImageResource(R.drawable.ic_heart);
+                    favourite = false;
+                }
+            }
+        });
+
+        backActivityImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavUtils.navigateUpFromSameTask(mediaSwara_activity);
+            }
+        });
 
         PageDownloader downloader = new PageDownloader();
         downloader.execute();
@@ -193,35 +206,6 @@ public class MediaSwara extends AppCompatActivity {
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.media_swara_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        favouriteStar = item;
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            case R.id.favourite_button:
-                if (!favourite) {
-                    item.setIcon(R.drawable.favourite_selected_icon);
-                    favourite = true;
-                } else {
-                    item.setIcon(R.drawable.favourite_icon);
-                    favourite = false;
-                }
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public void insertIntoDatabase(CardDetail card) {
 
         ContentValues values = new ContentValues();
@@ -231,6 +215,7 @@ public class MediaSwara extends AppCompatActivity {
         values.put(ArticleEntry.COLUMN_AUDIO_RES_URL, card.getAudioUrl());
         if (favourite) {
             values.put(ArticleEntry.COLUMN_IS_FAVOURITE, 1);
+            card.setIs_favourite(true);
         } else {
             values.put(ArticleEntry.COLUMN_IS_FAVOURITE, 0);
         }
@@ -295,6 +280,7 @@ public class MediaSwara extends AppCompatActivity {
                 loadingLayout = findViewById(R.id.loadingCard);
                 loadingLayout.setVisibility(View.GONE);
                 pageCount += 1;
+                Log.i("leeength", cardDetails.size() + "");
             } catch (Exception e) {
                 e.printStackTrace();
             }

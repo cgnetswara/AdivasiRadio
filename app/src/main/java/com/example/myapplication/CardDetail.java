@@ -11,6 +11,13 @@ public class CardDetail {
     private String mArticleHeading;
     private String mArticle;
     private String mArticleURL;
+
+
+    public void setIs_favourite(Boolean is_favourite) {
+        this.is_favourite = is_favourite;
+    }
+
+    private Boolean is_favourite = false;
     MediaPlayer mediaPlayer;
 
     CardDetail(String articleHeading, String article, String audioURL, String articleURL) {
@@ -43,5 +50,9 @@ public class CardDetail {
     }
 
     public String getArticleURL() { return mArticleURL; }
+
+    public Boolean getIs_favourite() {
+        return is_favourite;
+    }
 
 }
