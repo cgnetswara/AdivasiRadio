@@ -20,21 +20,21 @@ import data.DatabaseContract;
 
 public class FavouriteActivityAdapter extends RecyclerView.Adapter<FavouriteActivityAdapter.ArticleViewHolder> {
 
-    ArrayList<CardDetail> cardDetails;
+    private ArrayList<CardDetail> cardDetails;
 
-    public class ArticleViewHolder extends RecyclerView.ViewHolder {
+    class ArticleViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
         ViewGroup parent;
 
-        public ArticleViewHolder(@NonNull View itemView, ViewGroup parent) {
+        ArticleViewHolder(@NonNull View itemView, ViewGroup parent) {
             super(itemView);
             this.itemView = itemView;
             this.parent = parent;
         }
     }
 
-    public FavouriteActivityAdapter(ArrayList<CardDetail> cardDetails) {
+    FavouriteActivityAdapter(ArrayList<CardDetail> cardDetails) {
         this.cardDetails = cardDetails;
     }
 
@@ -42,8 +42,7 @@ public class FavouriteActivityAdapter extends RecyclerView.Adapter<FavouriteActi
     @Override
     public FavouriteActivityAdapter.ArticleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.article_history_item, parent, false);
-        FavouriteActivityAdapter.ArticleViewHolder viewHolder = new FavouriteActivityAdapter.ArticleViewHolder(v, parent);
-        return viewHolder;
+        return new ArticleViewHolder(v, parent);
     }
 
     @Override

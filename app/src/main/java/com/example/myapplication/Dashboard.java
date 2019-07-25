@@ -16,7 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import java.sql.Time;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Locale;
 import edu.cmu.cs.speech.tts.flite.CheckVoiceData;
@@ -54,7 +55,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
         requestPermissions(permissions, WRITE_REQUEST_CODE);
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
-        CardView typeinGondiCardView = findViewById(R.id.typeInGondiCard);
+        FloatingActionButton typeinGondiCardView = findViewById(R.id.typeInGondiButton);
         CardView libraryCardView = findViewById(R.id.libraryCardView);
 
         mediaSwaraCardView.setOnClickListener(new View.OnClickListener() {
