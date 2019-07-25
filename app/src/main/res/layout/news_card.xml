@@ -30,7 +30,8 @@
                     app:arc_cropDirection="cropInside"
                     app:elevation="10dp"
                     android:layout_marginBottom="20dp"
-                    app:arc_height="14dp">
+                    app:arc_height="14dp"
+                    app:arc_position="bottom">
 
                     <ImageView
                         android:id="@+id/cardImageTextView"
@@ -43,7 +44,7 @@
 "/>
 
                 </com.github.florent37.arclayout.ArcLayout>
-                
+
 
                 <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/playPauseImageView"
@@ -52,8 +53,8 @@
                     android:layout_height="50dp"
                     android:src="@drawable/play_button"
                     android:layout_centerInParent="true"/>
-                
-                
+
+
             </RelativeLayout>
 
             
