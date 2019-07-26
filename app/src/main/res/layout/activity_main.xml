@@ -6,40 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard"
     android:background="#ffffff">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:id="@+id/typeInGondiButton"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#D1C4E9"
-        android:src="@drawable/my_mic"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="24dp"
-        />
+
+
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:id="@+id/cardsLinearLayout">
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/mediaSwaraCardView"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="12dp"
+                android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardElevation="5dp"
-                app:cardBackgroundColor="#F7F7F7">
+                android:layout_weight="1"
+                app:cardBackgroundColor="#F7F7F7"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -53,13 +46,14 @@
                         android:layout_margin="30dp"
                         android:layout_marginBottom="60dp"
                         android:src="@drawable/media_swara" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Media Swara"
-                        android:textSize="24dp"
                         android:gravity="center"
-                        android:textColor="#000000"/>
+                        android:text="Media Swara"
+                        android:textColor="#000000"
+                        android:textSize="24dp" />
 
                 </LinearLayout>
 
@@ -68,15 +62,15 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/libraryCardView"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="12dp"
+                android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardElevation="5dp"
-                app:cardBackgroundColor="#F7F7F7">
+                android:layout_weight="1"
+                app:cardBackgroundColor="#F7F7F7"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -90,13 +84,14 @@
                         android:layout_margin="30dp"
                         android:layout_marginBottom="60dp"
                         android:src="@drawable/library" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Library"
-                        android:textSize="24dp"
                         android:gravity="center"
-                        android:textColor="#000000"/>
+                        android:text="Library"
+                        android:textColor="#000000"
+                        android:textSize="24dp" />
 
                 </LinearLayout>
 
@@ -106,10 +101,20 @@
 
         </LinearLayout>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/typeInGondiButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="32dp"
+            app:fabCustomSize="70dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#D1C4E9"
+            android:src="@drawable/my_mic" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.75"
             android:orientation="horizontal"
             android:gravity="center">
 
