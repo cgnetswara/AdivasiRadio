@@ -18,6 +18,7 @@ public class Library extends AppCompatActivity {
         CardView bookButton = findViewById(R.id.bookCardView);
         CardView articleButton = findViewById(R.id.recentCardView);
         CardView favouriteSection = findViewById(R.id.favouriteCardView);
+        CardView theWireSection = findViewById(R.id.wireCardView);
 
         bookButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,14 @@ public class Library extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), FavouritesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        theWireSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TheWire.class);
                 startActivity(intent);
             }
         });

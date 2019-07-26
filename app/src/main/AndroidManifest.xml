@@ -17,7 +17,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".FavouritesActivity"></activity>
+        <activity android:name=".YoutubePlayerActivity"></activity>
+        <activity android:name=".TheWire" />
+        <activity android:name=".FavouritesActivity" />
         <activity android:name=".Dashboard" />
         <activity android:name=".History_card_detail" />
         <activity android:name=".RecentArticles" />
@@ -25,7 +27,7 @@
         <activity android:name=".BookRead" />
         <activity
             android:name=".BookSection"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".TypeGondi" />
 
         <service

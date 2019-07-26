@@ -34,5 +34,6 @@
     <string name="favouritesSectionName">Favourites</string>
     <string name="pratham_books">Pratham Books</string>
     <string name="the_wire">The wire</string>
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
 
 </resources>
