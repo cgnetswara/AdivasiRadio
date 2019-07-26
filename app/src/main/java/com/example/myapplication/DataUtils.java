@@ -4,9 +4,18 @@ import java.util.ArrayList;
 
 public class DataUtils {
 
+    public static  ArrayList<String> getURLs () {
+        ArrayList<String> urls = new ArrayList<String>();
+        urls.add("6CpFXoE5emI");
+        urls.add("yD_amVU9Tg4");
+        return urls;
+    }
 
 
-    public static ArrayList<BookPage> getBook() {
+
+    public static ArrayList<BookData> getBooks() {
+
+        ArrayList<BookData> books = new ArrayList<BookData>();
 
         ArrayList<BookPage> bookPages = new ArrayList<BookPage>();
 
@@ -24,7 +33,13 @@ public class DataUtils {
                 "कारना अ\u0018ता असकेभोर तीजाइ\u0018ता तोर?\n" +
                 "\u0015व सग हानी पूड\u0015यग \u0015त\u0018तागा!\n", R.drawable.page_four));
 
-        return bookPages;
+        String authorName = "Sejal Mehta";
+        String date = "20/5/2019";
+
+        books.add(new BookData("अरे, इद सबय बोल तिन्जेतुड", authorName, bookPages, date, R.drawable.book_thumbnail));
+        return books;
+
+
     }
 
 }

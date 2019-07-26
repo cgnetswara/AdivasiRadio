@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -36,7 +37,9 @@ public class BookRead extends AppCompatActivity {
         backwardButtonFloating = findViewById(R.id.backwardArrow);
         ttsButtonImageView = findViewById(R.id.ttsButton);
 
-        final ArrayList<BookPage> bookPages = DataUtils.getBook();
+        Intent intent = getIntent();
+        int bookPos = intent.getIntExtra("currBookNo", -1);
+        final ArrayList<BookPage> bookPages = BookSection.books.get(bookPos).getBookpages();
 
         forwardButtonFloating.setOnClickListener(new View.OnClickListener() {
             @Override
