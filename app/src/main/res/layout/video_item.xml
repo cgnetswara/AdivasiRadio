@@ -9,11 +9,13 @@
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
     app:cardCornerRadius="4dp"
-    app:contentPadding="10dp">
+    app:contentPadding="10dp"
+    android:alpha="0.8">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <!-- youtube thumbnail view to show the thumbnail of videos -->
         <com.google.android.youtube.player.YouTubeThumbnailView
@@ -22,7 +24,7 @@
             android:layout_height="120dp"
             android:background="@android:color/darker_gray"
             android:contentDescription="@string/thumbnail_image_view_desc"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"/>
         <TextView
             android:id="@+id/video_title_label"
             android:layout_width="match_parent"
@@ -33,7 +35,7 @@
             android:layout_toRightOf="@+id/video_thumbnail_image_view"
             android:text="Title of Video"
             android:textColor="@android:color/black"
-            android:textSize="36sp" />
+            android:textSize="24sp" />
 
 
 

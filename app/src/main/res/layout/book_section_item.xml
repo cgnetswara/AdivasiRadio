@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="10dp"
+    android:alpha="0.8"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
@@ -30,7 +31,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 tools:text="This is a book Title"
-                android:textSize="36sp"
+                android:textSize="24sp"
                 android:maxLines="1"
                 android:ellipsize="end" />
             <LinearLayout

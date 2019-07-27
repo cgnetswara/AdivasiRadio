@@ -79,6 +79,8 @@
                     android:layout_height="match_parent"
                     android:padding="16dp"
                     tools:text="This is Article body."
+                    android:ellipsize="end"
+                    android:maxLines="9"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
