@@ -51,7 +51,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Media Swara"
+                        android:text="@string/media_swara"
                         android:textColor="#000000"
                         android:textSize="24dp" />
 
@@ -89,7 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Library"
+                        android:text="@string/library"
                         android:textColor="#000000"
                         android:textSize="24dp" />
 
