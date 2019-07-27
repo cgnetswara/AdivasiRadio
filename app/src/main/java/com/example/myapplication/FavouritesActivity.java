@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class FavouritesActivity extends AppCompatActivity {
     RecyclerView favouriteArticlesRecyclerView;
     static FavouriteActivityAdapter adapter;
 
+    static TextView emptyView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class FavouritesActivity extends AppCompatActivity {
 
         favouriteArticlesRecyclerView = findViewById(R.id.favouriteArticlesRecyclerView);
         favouriteArticlesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        emptyView = findViewById(R.id.emptyView);
         cardDetails = new ArrayList<CardDetail>();
 
         ArticleDbHelper dbHelper = new ArticleDbHelper(this);
@@ -46,6 +50,10 @@ public class FavouritesActivity extends AppCompatActivity {
                     cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_AUDIO_RES_URL)),
                     cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_URL))));
 
+        }
+
+        if (cardDetails.size() == 0) {
+            emptyView.setVisibility(View.VISIBLE);
         }
 
         adapter = new FavouriteActivityAdapter(cardDetails);

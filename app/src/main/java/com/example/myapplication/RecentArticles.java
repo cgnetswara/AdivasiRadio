@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,7 @@ public class RecentArticles extends AppCompatActivity {
     static ArrayList<CardDetail> cardDetails;
     RecyclerView recentArticlesRecyclerView;
     static ArticleHistoryAdapter adapter;
+    static TextView emptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class RecentArticles extends AppCompatActivity {
 
         recentArticlesRecyclerView = findViewById(R.id.recentArticlesRecyclerView);
         recentArticlesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        emptyView = findViewById(R.id.emptyArticleView);
 
         cardDetails = new ArrayList<CardDetail>();
 
@@ -43,6 +47,10 @@ public class RecentArticles extends AppCompatActivity {
                     cursor.getString(cursor.getColumnIndex(ArticleEntry.COLUMN_AUDIO_RES_URL)),
                     cursor.getString(cursor.getColumnIndex(ArticleEntry.COLUMN_ARTICLE_URL))));
 
+        }
+
+        if (cardDetails.size() == 0) {
+            emptyView.setVisibility(View.VISIBLE);
         }
 
         adapter = new ArticleHistoryAdapter(cardDetails);

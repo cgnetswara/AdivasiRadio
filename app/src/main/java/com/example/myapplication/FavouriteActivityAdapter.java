@@ -79,6 +79,10 @@ public class FavouriteActivityAdapter extends RecyclerView.Adapter<FavouriteActi
                 FavouritesActivity.adapter.notifyDataSetChanged();
                 cardDetails.remove(position);
 
+                if (cardDetails.size() == 0) {
+                    FavouritesActivity.emptyView.setVisibility(View.VISIBLE);
+                }
+
             }
         });
 

@@ -83,6 +83,10 @@ public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAd
                 RecentArticles.adapter.notifyDataSetChanged();
                 cardDetails.remove(position);
 
+                if (cardDetails.size() == 0) {
+                    RecentArticles.emptyView.setVisibility(View.VISIBLE);
+                }
+
             }
         });
 
