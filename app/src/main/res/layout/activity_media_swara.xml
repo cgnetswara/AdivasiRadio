@@ -55,8 +55,9 @@
 
             <ImageView
                 android:id="@+id/backActivityImageView"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_left_arrow"/>
 
 

@@ -203,7 +203,7 @@ public class MediaSwara extends AppCompatActivity {
         backActivityImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavUtils.navigateUpFromSameTask(mediaSwara_activity);
+                onBackPressed();
             }
         });
 
