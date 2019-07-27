@@ -18,12 +18,17 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
         <activity android:name=".YoutubePlayerActivity"></activity>
-        <activity android:name=".TheWire" />
-        <activity android:name=".FavouritesActivity" />
+        <activity android:name=".TheWire"
+            android:label="@string/the_wire"
+            />
+        <activity android:name=".FavouritesActivity"
+            android:label="@string/favouritesSectionName"/>
         <activity android:name=".Dashboard" />
         <activity android:name=".History_card_detail" />
-        <activity android:name=".RecentArticles" />
-        <activity android:name=".Library" />
+        <activity android:name=".RecentArticles"
+            android:label="@string/recent_articles"/>
+        <activity android:name=".Library"
+            android:label="@string/library"/>
         <activity android:name=".BookRead" />
         <activity
             android:name=".BookSection"

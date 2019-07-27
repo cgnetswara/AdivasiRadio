@@ -177,11 +177,6 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
             startActivity(intent);
             return true;
         }
-        if (id == R.id.action_settings) {
-            //Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
-            //startActivity(intent);
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
