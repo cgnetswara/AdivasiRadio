@@ -36,4 +36,44 @@
     <string name="the_wire">The wire</string>
     <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
 
+
+
+    <!-- we need to use video ids instead of video link -->
+    <string-array name="video_id_array">
+        <item>X2Nnco5myGQ</item>
+        <item>HYzVsXC4LuA</item>
+        <item>RY2Sx4ls5z0</item>
+        <item>Gz8OLWYmRp4</item>
+        <item>7pifGNJz078</item>
+        <item>LZFcsQCSFjA</item>
+        <item>pHcl2CXdiUc</item>
+        <item>TN4bWl3bUNI</item>
+        <item>zlYgOGotX6o</item>
+        <item>BLM8QRk7RQM</item>
+
+        <item>zgqENc6cFMg</item>
+        <item>IKlKI3ZFwxo</item>
+        <item>Sbov-o8PO-g</item>
+        <item>cGD8jGClGMY</item>
+    </string-array>
+
+    <string-array name="video_title_array">
+        <item>द वायर बुलेटिन गोंडी में (24 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (23 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (20 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (19 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (18 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (17 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (16 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (28 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (21 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (26 जून 2019)</item>
+
+        <item>द वायर बुलेटिन गोंडी में (25 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (24 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (27 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (20 जून 2019)</item>
+
+    </string-array>
+
 </resources>

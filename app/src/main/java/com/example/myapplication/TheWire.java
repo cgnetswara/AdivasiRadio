@@ -66,10 +66,16 @@ public class TheWire extends YouTubeBaseActivity {
     private ArrayList<YoutubeVideoModel> generateDummyVideoList() {
         ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList = new ArrayList<>();
 
+        String[] videoIDArray = getResources().getStringArray(R.array.video_id_array);
+        String[] videoTitleArray = getResources().getStringArray(R.array.video_title_array);
 
-        youtubeVideoModelArrayList.add(new YoutubeVideoModel("6CpFXoE5emI"));
-        youtubeVideoModelArrayList.add(new YoutubeVideoModel("yD_amVU9Tg4"));
-        youtubeVideoModelArrayList.add(new YoutubeVideoModel("6CpFXoE5emI"));
+        for (int i = 0; i < videoIDArray.length; i++) {
+
+            YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel(videoIDArray[i], videoTitleArray[i]);
+
+            youtubeVideoModelArrayList.add(youtubeVideoModel);
+
+        }
 
         return youtubeVideoModelArrayList;
 

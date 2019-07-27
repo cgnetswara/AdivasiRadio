@@ -14,6 +14,8 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -59,6 +61,8 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeVideoAdapte
         final YoutubeVideoModel youtubeVideoModel = youtubeVideoModelArrayList.get(position);
 
         View v = holder.itemView;
+        TextView videoTitle = holder.itemView.findViewById(R.id.video_title_label);
+        videoTitle.setText(youtubeVideoModel.getTitle());
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

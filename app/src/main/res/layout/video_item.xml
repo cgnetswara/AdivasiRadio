@@ -23,6 +23,17 @@
             android:background="@android:color/darker_gray"
             android:contentDescription="@string/thumbnail_image_view_desc"
             android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/video_title_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/video_thumbnail_image_view"
+            android:layout_toRightOf="@+id/video_thumbnail_image_view"
+            android:text="Title of Video"
+            android:textColor="@android:color/black"
+            android:textSize="36sp" />
 
 
 

@@ -12,8 +12,13 @@ public class YoutubeVideoModel {
         return videoId;
     }
 
-    public YoutubeVideoModel(String videoId) {
+    public String getTitle() {
+        return title;
+    }
+
+    public YoutubeVideoModel(String videoId, String title) {
         this.videoId = videoId;
+        this.title = title;
     }
 
     @Override
