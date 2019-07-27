@@ -71,8 +71,8 @@ public class FavouriteActivityAdapter extends RecyclerView.Adapter<FavouriteActi
                 ArticleDbHelper dbHelper = new ArticleDbHelper(holder.parent.getContext());
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-                String selection = DatabaseContract.ArticleEntry.COLUMN_AUDIO_RES_URL + "=?";
-                String[] selectionArgs = { card.getAudioUrl()};
+                String selection = DatabaseContract.ArticleEntry.COLUMN_ARTICLE_URL + "=?";
+                String[] selectionArgs = { card.getArticleURL()};
                 int deletedRows = db.delete(DatabaseContract.ArticleEntry.TABLE_NAME, selection, selectionArgs);
 
                 Toast.makeText(holder.parent.getContext(), "Article deleted", Toast.LENGTH_LONG).show();

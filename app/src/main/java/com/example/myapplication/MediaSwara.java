@@ -284,7 +284,7 @@ public class MediaSwara extends AppCompatActivity {
                     Element audioLink = e.selectFirst("audio");
                     Log.i("audiooo"  + hLink.attr("href"), audioLink.attr("src"));
                     if (p.size() != 0) {
-                        articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src"), e.selectFirst("a").attr("href")));
+                        articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src"), hLink.attr("href")));
                         Log.i("this", hLink.text() + " " + p.get(0).text());
                     }
                 }

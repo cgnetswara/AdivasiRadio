@@ -73,8 +73,8 @@ public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAd
                 ArticleDbHelper dbHelper = new ArticleDbHelper(holder.parent.getContext());
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-                String selection = ArticleEntry.COLUMN_AUDIO_RES_URL + "=?";
-                String[] selectionArgs = { card.getAudioUrl()};
+                String selection = ArticleEntry.COLUMN_ARTICLE_URL + "=?";
+                String[] selectionArgs = { card.getArticleURL()};
                 int deletedRows = db.delete(ArticleEntry.TABLE_NAME, selection, selectionArgs);
 
                 Log.i("deletedd", deletedRows + "");
