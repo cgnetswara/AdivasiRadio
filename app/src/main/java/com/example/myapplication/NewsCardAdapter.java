@@ -88,6 +88,20 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHo
                 }
             });
 
+            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    ImageView imageView = MediaSwara.currImageView;
+                    try {
+                        imageView.setImageResource(R.drawable.play_button);
+                        imageView.setTag(dashboard_activity.getString(R.string.play_tag));
+                    } catch (NullPointerException e) {
+                        e.printStackTrace();
+                    }
+                    Log.i("completedMedia", "completed");
+                }
+            });
+
             playPauseImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
