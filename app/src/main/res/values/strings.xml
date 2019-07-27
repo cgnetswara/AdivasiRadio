@@ -35,7 +35,7 @@
     <string name="pratham_books">Pratham Books</string>
     <string name="the_wire">The wire</string>
     <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
-
+    <string name="empty_data_text">दिखाने के लिए कुछ भी नहीं</string>
 
 
     <!-- we need to use video ids instead of video link -->
