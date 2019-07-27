@@ -57,6 +57,7 @@ public class MediaSwara extends AppCompatActivity {
     FloatingActionButton ttsButtonImageView;
     public static MediaPlayer mediaPlayer;
     public static ImageView currImageView;
+    LinearLayout noInternet;
     ImageView backActivityImageView;
     ImageView favouriteButton;
     static Boolean playerInitialised = false;
@@ -76,9 +77,9 @@ public class MediaSwara extends AppCompatActivity {
         ttsButtonImageView = findViewById(R.id.ttsButton);
         backActivityImageView = findViewById(R.id.backActivityImageView);
         favouriteButton = findViewById(R.id.favourite_button1);
+        noInternet = findViewById(R.id.no_internet_view);
 
         if(!isNetworkAvailable()) {
-            LinearLayout noInternet = findViewById(R.id.no_internet_view);
             noInternet.setVisibility(View.VISIBLE);
             return;
         }
@@ -261,7 +262,8 @@ public class MediaSwara extends AppCompatActivity {
             ArrayList<CardDetail> articles = new ArrayList<CardDetail>();
             try {
                 // Connect to the web site
-                Document document = Jsoup.connect(BASE_URL + pageCount).get();
+                Document document = Jsoup.connect(BASE_URL + pageCount).timeout(15000).get();
+                Log.i("lakjfdsl", document.toString());
                 // Get the html document articles
                 Elements articleElements = document.getElementsByClass("report");
                 for(Element e: articleElements) {
@@ -292,6 +294,11 @@ public class MediaSwara extends AppCompatActivity {
             super.onPostExecute(nCardDetails);
             try {
                 // if articles length is 0 handle it.
+
+                if(nCardDetails.size() == 0) {
+                    noInternet.setVisibility(View.VISIBLE);
+                }
+
                 int topIndex = cardDetails.size();
                 cardDetails.addAll(nCardDetails);
 

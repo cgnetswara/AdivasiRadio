@@ -38,7 +38,7 @@
     <string name="empty_data_text">दिखाने के लिए कुछ भी नहीं</string>
     <string name="media_swara">संदेश स्वर</string>
     <string name="library">पुस्तकालय</string>
-    <string name="no_internet_message">इंटरनेट नहीं है। कृपया इंटरनेट चालू करें।</string>
+    <string name="no_internet_message">खराब या कोई इंटरनेट नहीं। कृपया कनेक्शन जांचेंं।</string>
 
 
     <!-- we need to use video ids instead of video link -->
