@@ -4,8 +4,11 @@ import android.content.ContentValues;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
@@ -16,6 +19,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
@@ -72,6 +76,12 @@ public class MediaSwara extends AppCompatActivity {
         ttsButtonImageView = findViewById(R.id.ttsButton);
         backActivityImageView = findViewById(R.id.backActivityImageView);
         favouriteButton = findViewById(R.id.favourite_button1);
+
+        if(!isNetworkAvailable()) {
+            LinearLayout noInternet = findViewById(R.id.no_internet_view);
+            noInternet.setVisibility(View.VISIBLE);
+            return;
+        }
 
         mediaPlayer = new MediaPlayer();
 
@@ -203,6 +213,13 @@ public class MediaSwara extends AppCompatActivity {
 
     }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
 
 
 
@@ -227,9 +244,13 @@ public class MediaSwara extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mediaPlayer.stop();
-        mediaPlayer.release();
-        dashboard_activity.stopSpeaking();
+        try {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            dashboard_activity.stopSpeaking();
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 
     private class PageDownloader extends AsyncTask<Void, Void, ArrayList<CardDetail>> {
