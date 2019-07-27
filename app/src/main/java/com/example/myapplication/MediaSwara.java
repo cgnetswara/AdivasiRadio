@@ -238,6 +238,18 @@ public class MediaSwara extends AppCompatActivity {
             values.put(ArticleEntry.COLUMN_IS_FAVOURITE, 0);
         }
         long index = db.insert(ArticleEntry.TABLE_NAME, null, values);
+
+        if (index == -1) {
+            String selection = ArticleEntry.COLUMN_AUDIO_RES_URL + " =?";
+            String[] selectionArgs = { card.getAudioUrl() };
+
+            int count = db.update(
+                    ArticleEntry.TABLE_NAME,
+                    values,
+                    selection,
+                    selectionArgs);
+        }
+
         Log.i("databaseInfo", index + "");
 
     }
@@ -270,7 +282,7 @@ public class MediaSwara extends AppCompatActivity {
                     Elements p = e.getElementsByTag("p");
                     Element hLink = e.selectFirst("h3 a");
                     Element audioLink = e.selectFirst("audio");
-                    Log.i("audiooo"  + hLink.text(), audioLink.attr("src"));
+                    Log.i("audiooo"  + hLink.attr("href"), audioLink.attr("src"));
                     if (p.size() != 0) {
                         articles.add(new CardDetail(hLink.text(), p.get(0).text(), audioLink.attr("src"), e.selectFirst("a").attr("href")));
                         Log.i("this", hLink.text() + " " + p.get(0).text());

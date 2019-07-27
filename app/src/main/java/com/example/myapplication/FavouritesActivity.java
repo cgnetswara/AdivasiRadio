@@ -43,13 +43,17 @@ public class FavouritesActivity extends AppCompatActivity {
 
         Cursor cursor = db.query(DatabaseContract.ArticleEntry.TABLE_NAME, null, selection, selectionArgs, null, null, null);
 
-        while(cursor.moveToNext()) {
+        try {
+            while (cursor.moveToNext()) {
 
-            cardDetails.add(new CardDetail(cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_HEADING)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_CONTENT)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_AUDIO_RES_URL)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_URL))));
+                cardDetails.add(new CardDetail(cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_HEADING)),
+                        cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_CONTENT)),
+                        cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_AUDIO_RES_URL)),
+                        cursor.getString(cursor.getColumnIndex(DatabaseContract.ArticleEntry.COLUMN_ARTICLE_URL))));
 
+            }
+        } finally {
+            cursor.close();
         }
 
         if (cardDetails.size() == 0) {
