@@ -35,7 +35,8 @@
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.Library"
             android:label="@string/library" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.BookRead" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.BookRead"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.BookSection"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
