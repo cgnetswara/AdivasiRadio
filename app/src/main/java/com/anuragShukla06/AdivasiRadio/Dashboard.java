@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +41,8 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
     private TextToSpeech mTts;
     private int mSelectedVoice;
+    private FloatingActionButton callFb;
+    AlertDialog.Builder builder;
 
     public static Dashboard getDashboard() {
         return dashboard_activity;
@@ -52,12 +55,21 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
         dashboard_activity = this;
 
-        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.INTERNET};
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE, Manifest.permission.INTERNET};
         requestPermissions(permissions, WRITE_REQUEST_CODE);
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
         FloatingActionButton typeinGondiCardView = findViewById(R.id.typeInGondiButton);
         CardView libraryCardView = findViewById(R.id.libraryCardView);
+        callFb = findViewById(R.id.callActivityFab);
+
+        callFb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CallCGNetActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mediaSwaraCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,21 +107,22 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
             }
         }
 
-        if (mVoices.isEmpty()) {
+        if (mVoices.isEmpty() && builder == null) {
             // We can't demo anything if there are no voices installed.
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Flite voices not installed. Please add voices in order to run the demo");
-            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                    Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
-                    startActivity(intent);
-                }
-            });
-            AlertDialog alert = builder.create();
-            alert.show();
-            //Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
+//            builder = new AlertDialog.Builder(this);
+//            builder.setMessage("Flite voices not installed. Please add voices in order to run the demo");
+//            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    dialog.cancel();
+//                    builder = null;
+//                    Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
+//                    startActivity(intent);
+//                }
+//            });
+//            AlertDialog alert = builder.create();
+//            alert.show();
+            Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
         }
         else {
             // Initialize the TTS
@@ -234,6 +247,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
             builder.setNegativeButton("Open TTS Settings", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
                     dialog.cancel();
                     Intent intent = new Intent();
                     intent.setAction("com.android.settings.TTS_SETTINGS");

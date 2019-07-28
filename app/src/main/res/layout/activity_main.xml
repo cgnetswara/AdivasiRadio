@@ -101,15 +101,34 @@
 
         </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/typeInGondiButton"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            app:fabCustomSize="70dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#D1C4E9"
-            android:src="@drawable/my_mic" />
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/typeInGondiButton"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:fabCustomSize="70dp"
+                android:backgroundTint="#D1C4E9"
+                android:src="@drawable/my_mic"
+                app:elevation="0dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:src="@drawable/call_icon"
+                android:id="@+id/callActivityFab"
+                android:backgroundTint="#D1C4E9"
+                app:fabCustomSize="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                app:elevation="0dp"/>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

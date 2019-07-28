@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +54,7 @@ public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAd
         final CardDetail card = cardDetails.get(position);
         String heading = card.getArticleHeading();
         TextView textView = holder.itemView.findViewById(R.id.articleHeading);
-        Button deleteButton = holder.itemView.findViewById(R.id.delete_button);
+        ImageView deleteButton = holder.itemView.findViewById(R.id.delete_button);
         textView.setText(heading);
 
         textView.setOnClickListener(new View.OnClickListener() {

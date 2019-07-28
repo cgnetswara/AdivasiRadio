@@ -52,7 +52,7 @@ import java.io.File;
  * This path gets used in the flite JNI code.
  */
 
-public class SettingsProvider extends ContentProvider {
+public class TTsSettingsProvider extends ContentProvider {
 	private class SettingsCursor extends MatrixCursor {
         private String settings;
 
