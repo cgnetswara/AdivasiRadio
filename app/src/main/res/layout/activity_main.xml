@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 app:fabCustomSize="70dp"
                 android:backgroundTint="#D1C4E9"
-                android:src="@drawable/my_mic"
+                android:src="@drawable/tts_icon"
                 app:elevation="0dp"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
