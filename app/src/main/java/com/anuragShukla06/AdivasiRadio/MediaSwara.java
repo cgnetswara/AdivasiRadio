@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import android.content.ContentValues;
 
@@ -12,7 +12,6 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.NavUtils;
 
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -21,6 +20,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.anuragShukla06.myapplication.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
@@ -37,8 +37,6 @@ import java.util.ArrayList;
 
 import data.ArticleDbHelper;
 import data.DatabaseContract.ArticleEntry;
-
-import static com.example.myapplication.Dashboard.dashboard_activity;
 
 public class MediaSwara extends AppCompatActivity {
 
@@ -132,7 +130,7 @@ public class MediaSwara extends AppCompatActivity {
                 Log.i("position", position + " " + (cardDetails.size()-1));
                 insertIntoDatabase(cardDetails.get(position));
                 mediaPlayer.stop();
-                dashboard_activity.stopSpeaking();
+                Dashboard.dashboard_activity.stopSpeaking();
                 ttsButtonImageView.setImageResource(R.drawable.tts_icon);
                 TTS_On = false;
                 if (currImageView != null) currImageView.setImageResource(R.drawable.play_button);
@@ -175,12 +173,12 @@ public class MediaSwara extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!TTS_On) {
-                    dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
+                    Dashboard.dashboard_activity.sayText(cardDetails.get(currentCardPos).getArticle(), TextToSpeech.QUEUE_FLUSH);
                     ttsButtonImageView.setImageResource(R.drawable.tts_pause_icon);
                     TTS_On = true;
                 } else{
                     ttsButtonImageView.setImageResource(R.drawable.tts_icon);
-                    dashboard_activity.stopSpeaking();
+                    Dashboard.dashboard_activity.stopSpeaking();
                     TTS_On = false;
                 }
             }
@@ -260,7 +258,7 @@ public class MediaSwara extends AppCompatActivity {
         try {
             mediaPlayer.stop();
             mediaPlayer.release();
-            dashboard_activity.stopSpeaking();
+            Dashboard.dashboard_activity.stopSpeaking();
         } catch (NullPointerException e){
             e.printStackTrace();
         }

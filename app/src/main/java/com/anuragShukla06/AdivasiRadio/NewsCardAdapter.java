@@ -1,26 +1,20 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
-import android.content.Context;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.anuragShukla06.myapplication.R;
 
 public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardHolderView> {
 

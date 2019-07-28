@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.provider.BaseColumns;
 import android.view.View;
 import android.widget.TextView;
+
+import com.anuragShukla06.myapplication.R;
 
 import java.util.ArrayList;
 

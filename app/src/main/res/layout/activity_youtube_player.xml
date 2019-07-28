@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".YoutubePlayerActivity">
+    tools:context="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity">
 
     <!-- youtube player view to play videos -->
     <com.google.android.youtube.player.YouTubePlayerView

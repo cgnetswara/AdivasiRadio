@@ -1,13 +1,13 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.View;
 
+import com.anuragShukla06.myapplication.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
@@ -16,7 +16,7 @@ import com.yuyakaido.android.cardstackview.Direction;
 
 import java.util.ArrayList;
 
-import static com.example.myapplication.Dashboard.dashboard_activity;
+import static com.anuragShukla06.AdivasiRadio.Dashboard.dashboard_activity;
 
 public class BookRead extends AppCompatActivity {
 

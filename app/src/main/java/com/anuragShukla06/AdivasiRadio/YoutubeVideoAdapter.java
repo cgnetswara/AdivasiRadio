@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,11 +10,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anuragShukla06.myapplication.R;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

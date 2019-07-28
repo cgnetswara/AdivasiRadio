@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    package="com.anuragShukla06.myapplication">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -18,23 +18,23 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".YoutubePlayerActivity"></activity>
-        <activity android:name=".TheWire"
+        <activity android:name="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TheWire"
             android:label="@string/the_wire"
             />
-        <activity android:name=".FavouritesActivity"
+        <activity android:name="com.anuragShukla06.AdivasiRadio.FavouritesActivity"
             android:label="@string/favouritesSectionName"/>
-        <activity android:name=".Dashboard" />
-        <activity android:name=".History_card_detail" />
-        <activity android:name=".RecentArticles"
+        <activity android:name="com.anuragShukla06.AdivasiRadio.Dashboard" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.History_card_detail" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.RecentArticles"
             android:label="@string/recent_articles"/>
-        <activity android:name=".Library"
+        <activity android:name="com.anuragShukla06.AdivasiRadio.Library"
             android:label="@string/library"/>
-        <activity android:name=".BookRead" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.BookRead" />
         <activity
-            android:name=".BookSection"
+            android:name="com.anuragShukla06.AdivasiRadio.BookSection"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".TypeGondi" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TypeGondi" />
 
         <service
             android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService"
@@ -51,8 +51,8 @@
         </service>
 
         <activity
-            android:name=".MediaSwara"
-            android:parentActivityName=".Dashboard"
+            android:name="com.anuragShukla06.AdivasiRadio.MediaSwara"
+            android:parentActivityName="com.anuragShukla06.AdivasiRadio.Dashboard"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData"
@@ -74,7 +74,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name="com.anuragShukla06.AdivasiRadio.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wire_background"
     android:orientation="vertical"
-    tools:context=".TheWire">
+    tools:context="com.anuragShukla06.AdivasiRadio.TheWire">
 
     <!--  recycler view to show the list of youtube videos -->
     <androidx.recyclerview.widget.RecyclerView

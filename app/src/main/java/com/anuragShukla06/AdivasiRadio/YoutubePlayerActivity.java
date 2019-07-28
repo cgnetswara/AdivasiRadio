@@ -1,10 +1,9 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.anuragShukla06.AdivasiRadio;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import com.anuragShukla06.myapplication.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;

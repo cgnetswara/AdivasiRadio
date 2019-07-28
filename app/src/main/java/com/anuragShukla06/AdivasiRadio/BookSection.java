@@ -1,13 +1,12 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import com.anuragShukla06.myapplication.R;
 
 import java.util.ArrayList;
 

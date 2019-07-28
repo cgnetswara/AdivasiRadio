@@ -53,14 +53,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.myapplication.R;
+import com.anuragShukla06.myapplication.R;
 
 /* Download user-requested voice data for Flite
  * 

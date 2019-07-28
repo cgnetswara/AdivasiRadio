@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookSection"
+    tools:context="com.anuragShukla06.AdivasiRadio.BookSection"
     android:background="@drawable/book_section_background">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.anuragShukla06.myapplication.R;
 
 public class TypeGondi extends AppCompatActivity {
 

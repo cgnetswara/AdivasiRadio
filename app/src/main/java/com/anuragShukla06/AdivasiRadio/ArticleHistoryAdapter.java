@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,10 +13,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anuragShukla06.myapplication.R;
+
 import java.util.ArrayList;
 
 import data.ArticleDbHelper;
-import data.DatabaseContract;
 import data.DatabaseContract.ArticleEntry;
 
 public class ArticleHistoryAdapter extends RecyclerView.Adapter<ArticleHistoryAdapter.ArticleViewHolder> {

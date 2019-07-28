@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.anuragShukla06.AdivasiRadio;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.anuragShukla06.myapplication.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -96,18 +97,19 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
         if (mVoices.isEmpty()) {
             // We can't demo anything if there are no voices installed.
-            /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Flite voices not installed. Please add voices in order to run the demo");
             builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
-                    finish();
+                    Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
+                    startActivity(intent);
                 }
             });
             AlertDialog alert = builder.create();
-            alert.show();*/
-            Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
+            alert.show();
+            //Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
         }
         else {
             // Initialize the TTS
