@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.anuragShukla06.myapplication.R;
@@ -41,7 +42,6 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
     private TextToSpeech mTts;
     private int mSelectedVoice;
-    private FloatingActionButton callFb;
     AlertDialog.Builder builder;
 
     public static Dashboard getDashboard() {
@@ -59,9 +59,9 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
         requestPermissions(permissions, WRITE_REQUEST_CODE);
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
-        FloatingActionButton typeinGondiCardView = findViewById(R.id.typeInGondiButton);
+        ImageView typeinGondiCardView = findViewById(R.id.ttsActivityNav);
         CardView libraryCardView = findViewById(R.id.libraryCardView);
-        callFb = findViewById(R.id.callActivityFab);
+        ImageView callFb = findViewById(R.id.callActivityNav);
 
         callFb.setOnClickListener(new View.OnClickListener() {
             @Override
