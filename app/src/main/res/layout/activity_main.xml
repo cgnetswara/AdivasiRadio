@@ -116,20 +116,13 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/iiit"
                 android:layout_weight="1"
-                android:layout_marginLeft="12dp"
                 />
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
+                android:layout_marginRight="30dp"
                 android:src="@drawable/cgnet_swara_logo"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@drawable/microsoft_logo"/>
 
 
         </LinearLayout>
