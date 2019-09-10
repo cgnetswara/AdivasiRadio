@@ -80,7 +80,7 @@
                     android:padding="16dp"
                     tools:text="This is Article body."
                     android:ellipsize="end"
-                    android:maxLines="9"
+                    android:maxLines="8"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
