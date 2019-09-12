@@ -16,6 +16,7 @@ public class History_card_detail extends AppCompatActivity {
     TextView recentHeading;
     TextView recentArticle;
     FloatingActionButton ttsButton;
+    Dashboard dashboard = Dashboard.getDashboard();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class History_card_detail extends AppCompatActivity {
         recentHeading = findViewById(R.id.recentHeadingTextView);
         recentArticle = findViewById(R.id.recentArticleTextView);
         ttsButton = findViewById(R.id.tts_speak_button);
+
         Intent intent = getIntent();
         String heading = intent.getStringExtra("heading");
         final String article = intent.getStringExtra("article");
@@ -32,7 +34,7 @@ public class History_card_detail extends AppCompatActivity {
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dashboard dashboard = Dashboard.getDashboard();
+
                 dashboard.sayText(article, TextToSpeech.QUEUE_FLUSH);
             }
         });
@@ -41,5 +43,11 @@ public class History_card_detail extends AppCompatActivity {
         recentArticle.setText(article);
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dashboard.stopSpeaking();
     }
 }

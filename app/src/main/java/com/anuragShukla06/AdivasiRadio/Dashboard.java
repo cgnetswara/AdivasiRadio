@@ -260,6 +260,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
                     startActivity(intent);
                 }
             });
+            builder.setPositiveButton("Already Did", null);
             AlertDialog alert = builder.create();
             alert.show();
         }

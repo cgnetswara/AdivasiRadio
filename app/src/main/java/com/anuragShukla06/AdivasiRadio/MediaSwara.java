@@ -259,7 +259,7 @@ public class MediaSwara extends AppCompatActivity {
             mediaPlayer.stop();
             mediaPlayer.release();
             Dashboard.dashboard_activity.stopSpeaking();
-        } catch (NullPointerException e){
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
