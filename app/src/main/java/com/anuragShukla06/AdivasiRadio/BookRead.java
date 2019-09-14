@@ -26,6 +26,7 @@ public class BookRead extends AppCompatActivity {
     FloatingActionButton ttsButtonImageView;
     Boolean TTS_On = false;
     static int currentPagePos;
+    Dashboard dashboard = Dashboard.getDashboard();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,5 +120,11 @@ public class BookRead extends AppCompatActivity {
 
         bookPageStackView.setAdapter(new BookPageAdapter(bookPages));
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dashboard.stopSpeaking();
     }
 }

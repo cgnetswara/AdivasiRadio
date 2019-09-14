@@ -14,6 +14,7 @@ public class BookSection extends AppCompatActivity {
 
     static ArrayList<BookData> books;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,4 +37,6 @@ public class BookSection extends AppCompatActivity {
         booksRecyclerView.setAdapter(adapter);
 
     }
+
+
 }

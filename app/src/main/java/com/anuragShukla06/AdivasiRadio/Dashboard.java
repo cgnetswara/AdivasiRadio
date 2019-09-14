@@ -26,10 +26,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Locale;
-import edu.cmu.cs.speech.tts.flite.CheckVoiceData;
-import edu.cmu.cs.speech.tts.flite.DownloadVoiceData;
-import edu.cmu.cs.speech.tts.flite.Voice;
 
+//import edu.cmu.cs.speech.tts.flite.CheckVoiceData;
+//import edu.cmu.cs.speech.tts.flite.DownloadVoiceData;
+//import edu.cmu.cs.speech.tts.flite.Voice;
 
 
 public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitListener {
@@ -40,7 +40,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
     public static final int WRITE_REQUEST_CODE = 1;
 
     // Data variables
-    private ArrayList<Voice> mVoices;
+//    private ArrayList<Voice> mVoices;
     public static Dashboard dashboard_activity;
 
     private TextToSpeech mTts;
@@ -61,13 +61,14 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
         dashboard_activity = this;
 
-        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE, Manifest.permission.INTERNET};
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE, Manifest.permission.INTERNET};
         requestPermissions(permissions, WRITE_REQUEST_CODE);
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
         ImageView typeinGondiCardView = findViewById(R.id.ttsActivityNav);
         CardView libraryCardView = findViewById(R.id.libraryCardView);
         ImageView callFb = findViewById(R.id.callActivityNav);
+
 
         callFb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,57 +105,78 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
     }
 
     public void initVoices() {
-        ArrayList<Voice> allVoices = CheckVoiceData.getVoices();
-        mVoices = new ArrayList<Voice>();
-        for(Voice vox:allVoices) {
-            if (vox.isAvailable()) {
-                mVoices.add(vox);
-                System.out.println(vox.getVariant());
-            }
-        }
 
-        if (mVoices.isEmpty() && builder == null) {
-            // We can't demo anything if there are no voices installed.
-//            builder = new AlertDialog.Builder(this);
-//            builder.setMessage("Flite voices not installed. Please add voices in order to run the demo");
-//            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    dialog.cancel();
-//                    builder = null;
-//                    Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
-//                    startActivity(intent);
-//                }
-//            });
-//            AlertDialog alert = builder.create();
-//            alert.show();
-            Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
-        }
-        else {
-            // Initialize the TTS
-            if (android.os.Build.VERSION.SDK_INT >=
-                    android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                mTts = new TextToSpeech(dashboard_activity, dashboard_activity, "edu.cmu.cs.speech.tts.flite");
-            }
-            else {
-                mTts = new TextToSpeech(dashboard_activity, dashboard_activity);
-            }
-            mSelectedVoice = 0;
+        mTts = new TextToSpeech(dashboard_activity, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    mTts.setLanguage(Locale.forLanguageTag("hin"));
+                    Log.i("succccess", "success");
+                } else {
+                    Log.e("TTS", "Initilization Failed!");
+                }
 
-        }
+            }
+        });
+
+//        ArrayList<Voice> allVoices = CheckVoiceData.getVoices();
+//        mVoices = new ArrayList<Voice>();
+//        for(Voice vox:allVoices) {
+//            if (vox.isAvailable()) {
+//                mVoices.add(vox);
+//                System.out.println(vox.getVariant());
+//            }
+//        }
+//
+//        if (mVoices.isEmpty() && builder == null) {
+//            // We can't demo anything if there are no voices installed.
+////            builder = new AlertDialog.Builder(this);
+////            builder.setMessage("Flite voices not installed. Please add voices in order to run the demo");
+////            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+////                @Override
+////                public void onClick(DialogInterface dialog, int which) {
+////                    dialog.cancel();
+////                    builder = null;
+////                    Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
+////                    startActivity(intent);
+////                }
+////            });
+////            AlertDialog alert = builder.create();
+////            alert.show();
+//            Toast.makeText(this, "Flite voices not installed. Please add voices in order to run the demo", Toast.LENGTH_LONG).show();
+//        }
+//        else {
+//            // Initialize the TTS
+//            if (android.os.Build.VERSION.SDK_INT >=
+//                    android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+//                mTts = new TextToSpeech(dashboard_activity, dashboard_activity, "edu.cmu.cs.speech.tts.flite");
+//            }
+//            else {
+//                mTts = new TextToSpeech(dashboard_activity, dashboard_activity);
+//            }
+//            mSelectedVoice = 0;
+
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if (mTts != null)
+//            mTts.shutdown();
+//            initVoices();
+//    }
+
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onDestroy() {
+        super.onDestroy();
         if (mTts != null)
             mTts.shutdown();
-            initVoices();
     }
+
     public void stopSpeaking() {
         mTts.stop();
     }
-
 
 
     public void sayText(String text, int mode) {
@@ -163,44 +185,44 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
         //TODO: GET FROM SETTINGS LATER
         //int currentVoiceID = mVoiceSpinner.getSelectedItemPosition();
-        int currentVoiceID = 0;
-        Log.i("equality", String.valueOf(currentVoiceID) + " " + String.valueOf(mSelectedVoice));
-        if (currentVoiceID == mSelectedVoice) {
-            //mSelectedVoice = currentVoiceID;
-            Voice v = mVoices.get(currentVoiceID);
-            mTts.setLanguage(v.getLocale());
-        }
+//        int currentVoiceID = 0;
+//        Log.i("equality", String.valueOf(currentVoiceID) + " " + String.valueOf(mSelectedVoice));
+//        if (currentVoiceID == mSelectedVoice) {
+//            //mSelectedVoice = currentVoiceID;
+//            Voice v = mVoices.get(currentVoiceID);
+//            mTts.setLanguage(v.getLocale());
+//        }
 
         //int currentRate = mRateSpinner.getSelectedItemPosition();
         int currentRate = 2;
-        mTts.setSpeechRate((float)(currentRate + 1)/3);
+        mTts.setSpeechRate((float) (currentRate + 1) / 3);
 
         mTts.speak(text, mode, null, null);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dashboard, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.voices_list) {
-            Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_dashboard, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.voices_list) {
+//            Intent intent = new Intent(dashboard_activity, DownloadVoiceData.class);
+//            startActivity(intent);
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -211,6 +233,9 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     initVoices();
+                    Log.i("chal gya", "chal gya");
+//                        mTts = new TextToSpeech(dashboard_activity, dashboard_activity);
+
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
@@ -263,8 +288,7 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
             builder.setPositiveButton("Already Did", null);
             AlertDialog alert = builder.create();
             alert.show();
-        }
-        else {
+        } else {
             //buildUI();
         }
     }
