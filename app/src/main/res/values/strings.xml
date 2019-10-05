@@ -40,6 +40,12 @@
     <string name="library">संग्रह</string>
     <string name="no_internet_message">खराब या कोई इंटरनेट नहीं। कृपया कनेक्शन जांचेंं।</string>
     <string name="callSwara">कॉल पर अपना संदेश रिकॉर्ड करने के लिए, कृपया नीचे दिया गया बटन दबाएं।</string>
+    <string name="phone_dialog_hint">Enter Your Phone Number (10 digits)</string>
+    <string name="progressTextViewStart">Translations: </string>
+    <string name="pointsTextViewStart">Points: </string>
+    <string name="rankTextViewStart">Rank: </string>
+    <string name="phone_number">phone_number</string>
+    <string name="phoneTextViewStart">Phone No:</string>
 
 
     <!-- we need to use video ids instead of video link -->

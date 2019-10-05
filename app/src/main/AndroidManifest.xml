@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.anuragShukla06.AdivasiRadio.CallCGNetActivity"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TransDataCollectionActivity"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.CallCGNetActivity" />
         <activity android:name="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity" />
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.TheWire"
@@ -36,50 +37,43 @@
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.Library"
             android:label="@string/library" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.BookRead"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.BookRead"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.BookSection"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.TypeGondi" />
-
-        <!--<service-->
-            <!--android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService"-->
-            <!--android:label="@string/app_name">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.TTS_SERVICE" />-->
-
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-
-            <!--<meta-data-->
-                <!--android:name="android.speech.tts"-->
-                <!--android:resource="@xml/tts_engine" />-->
-        <!--</service>-->
-
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TypeGondi" /> <!-- <service -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.TTS_SERVICE" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.speech.tts" -->
+        <!-- android:resource="@xml/tts_engine" /> -->
+        <!-- </service> -->
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.MediaSwara"
             android:parentActivityName="com.anuragShukla06.AdivasiRadio.Dashboard"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!--<activity-->
-            <!--android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData"-->
-            <!--android:label="@string/flite_voice_manager"-->
-            <!--android:theme="@android:style/Theme.Material.Light">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.speech.tts.engine.INSTALL_TTS_DATA" />-->
-
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-        <!--<activity-->
-            <!--android:name="edu.cmu.cs.speech.tts.flite.CheckVoiceData"-->
-            <!--android:label="@string/app_name">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.speech.tts.engine.CHECK_TTS_DATA" />-->
-
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- <activity -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData" -->
+        <!-- android:label="@string/flite_voice_manager" -->
+        <!-- android:theme="@android:style/Theme.Material.Light"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.speech.tts.engine.INSTALL_TTS_DATA" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.CheckVoiceData" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.speech.tts.engine.CHECK_TTS_DATA" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
             android:name="com.anuragShukla06.AdivasiRadio.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -88,23 +82,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Legacy Code for pre-ICS compatibility -->
-        <!--<activity-->
-            <!--android:name="edu.cmu.cs.speech.tts.flite.Flite"-->
-            <!--android:enabled="true"-->
-            <!--android:label="@string/app_name"-->
-            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.START_TTS_ENGINE" />-->
-
-                <!--<category android:name="android.intent.category.tts_engine.FLITE" />-->
-                <!--<category android:name="android.intent.category.tts_lang.eng.USA" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-        <!--<provider-->
-            <!--android:name="edu.cmu.cs.speech.tts.flite.providers.TTsSettingsProvider"-->
-            <!--android:authorities="edu.cmu.cs.speech.tts.flite.providers.TTsSettingsProvider" />-->
+        </activity>
     </application>
 
 </manifest>
