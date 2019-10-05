@@ -46,6 +46,11 @@
     <string name="rankTextViewStart">Rank: </string>
     <string name="phone_number">phone_number</string>
     <string name="phoneTextViewStart">Phone No:</string>
+    <string name="level0">Noobie</string>
+    <string name="level1">Gondi Learner</string>
+    <string name="level2">Gondi Expert</string>
+    <string name="level3">Elite</string>
+    <string name="level4">Global Elite</string>
 
 
     <!-- we need to use video ids instead of video link -->

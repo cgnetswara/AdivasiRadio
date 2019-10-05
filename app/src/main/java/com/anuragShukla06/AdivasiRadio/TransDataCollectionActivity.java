@@ -31,7 +31,7 @@ import java.net.URL;
 
 public class TransDataCollectionActivity extends AppCompatActivity {
 
-    String BASE_URL = "http://192.168.43.235:8080/";
+    String BASE_URL = "https://gondi-data-collection.herokuapp.com/";
     Button submitButton;
     TextView questionTextView;
     EditText transEditText;
@@ -44,7 +44,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
     int numberTranslated = 0;
     int points;
     int progress;
-    int numberForStreak = 2;
+    int numberForStreak = 10;
     boolean isSteak = false;
     SharedPreferences sharedPref;
     TextView streakBarTextView;
@@ -64,6 +64,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
         phoneTextView = findViewById(R.id.phoneTextView);
         streakBarTextView = findViewById(R.id.streakBarTextView);
         rankBarTextView = findViewById(R.id.rankBarTextView);
+        rankTextView = findViewById(R.id.rankTextView);
 
 
         streakBarTextView.setText(0 + "/" + numberForStreak);
@@ -215,6 +216,8 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " + points);
                 progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
 
+                setRank(points);
+
 
                 streakBarTextView.setText(numberTranslated%numberForStreak + "/" + numberForStreak);
 
@@ -289,6 +292,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " +  points);
                 progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
                 phoneTextView.setText(getString(R.string.phoneTextViewStart) +  " " + phone);
+                setRank(points);
 
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
@@ -301,6 +305,39 @@ public class TransDataCollectionActivity extends AppCompatActivity {
         }
     }
 
+    void setRank(int points) {
+        String text = "";
+        int diff;
+        if (points < 15) {
+            text = getString(R.string.level0);
+            diff = 15-points;
+        }
+        else if (points < 40) {
+            text = getString(R.string.level1);
+            diff = 40-points;
+        }
+        else if (points < 125) {
+            text = getString(R.string.level2);
+            diff = 125-points;
+        }
+        else if (points < 170) {
+            text = getString(R.string.level3);
+            diff = 170-points;
+        }
+        else {
+            text = getString(R.string.level4);
+            diff = -1;
+        }
+
+        rankTextView.setText(getString(R.string.rankTextViewStart) +   " " + text);
+
+        if (diff != -1) {
+            rankBarTextView.setText(diff + " points.");
+        } else {
+            rankBarTextView.setText("You are at top!");
+        }
+
+    }
 
     private class QuestionFetch extends AsyncTask<String, Void, String> {
 

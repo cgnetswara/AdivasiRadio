@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.anuragShukla06.myapplication"
-        minSdkVersion 25
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 7
         versionName "2.1"
