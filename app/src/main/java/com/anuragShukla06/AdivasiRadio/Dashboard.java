@@ -38,6 +38,8 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 
 
     public static final int WRITE_REQUEST_CODE = 1;
+    int TTS_DATA_CHECK_CODE = 2;
+    int DATA_DOWNLOAD_CODE = 3;
 
     // Data variables
 //    private ArrayList<Voice> mVoices;
@@ -224,6 +226,35 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
 //        return super.onOptionsItemSelected(item);
 //    }
 
+    protected void onActivityResult(
+            int requestCode, int resultCode, Intent data) {
+        if (requestCode == TTS_DATA_CHECK_CODE) {
+            if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
+                // success, create the TTS instance
+                Log.i("Dashboard_actRes:", "Inside resultCode success");
+                initVoices();
+            } else {
+                // missing data, install it
+
+
+                Log.i("Dashboard_actRes:", "Inside resultCode no luck       ");
+                Intent installIntent = new Intent();
+                installIntent.setAction(
+                        TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                ArrayList<String> languages = new ArrayList<String>();
+                languages.add("hin-IND"); // hin - hindi, IND - INDIA
+                installIntent.putStringArrayListExtra(
+                        TextToSpeech.Engine.EXTRA_CHECK_VOICE_DATA_FOR, languages);
+                startActivityForResult(installIntent, DATA_DOWNLOAD_CODE);
+            }
+        } else if (requestCode == DATA_DOWNLOAD_CODE) {
+            if (requestCode == RESULT_OK) {
+                // success, create the TTS instance
+                initVoices();
+            }
+        }
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -232,8 +263,9 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    initVoices();
-                    Log.i("chal gya", "chal gya");
+                    Intent checkIntent = new Intent();
+                    checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+                    startActivityForResult(checkIntent, TTS_DATA_CHECK_CODE);
 //                        mTts = new TextToSpeech(dashboard_activity, dashboard_activity);
 
                 } else {

@@ -6,13 +6,10 @@ android {
         applicationId "com.anuragShukla06.myapplication"
         minSdkVersion 25
         targetSdkVersion 28
-        versionCode 2
-        versionName "2.0"
+        versionCode 7
+        versionName "2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
         android {
             defaultConfig.applicationId = "com.anuragShukla06.AdivasiRadio"
         }
