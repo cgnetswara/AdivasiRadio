@@ -11,9 +11,12 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +43,10 @@ public class TransDataCollectionActivity extends AppCompatActivity {
     TextView pointsTextView;
     TextView phoneTextView;
     TextView rankTextView; // Implement rank system
+    Spinner regionSpinner;
     String phone;
     int numberTranslated = 0;
+    int regionId;
     int points;
     int progress;
     int numberForStreak = 10;
@@ -65,6 +70,13 @@ public class TransDataCollectionActivity extends AppCompatActivity {
         streakBarTextView = findViewById(R.id.streakBarTextView);
         rankBarTextView = findViewById(R.id.rankBarTextView);
         rankTextView = findViewById(R.id.rankTextView);
+        regionSpinner = findViewById(R.id.regionSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.region_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        regionSpinner.setAdapter(adapter);
 
 
         streakBarTextView.setText(0 + "/" + numberForStreak);
@@ -109,8 +121,8 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                         toAdd = 5;
                         isSteak = true; //making a streak builder
                     }
-
-                    submitTrans.execute(BASE_URL + "submitAnswer/" + phone + "/" + translation + "/" + toAdd);
+                    regionId = regionSpinner.getSelectedItemPosition();
+                    submitTrans.execute(BASE_URL + "submitAnswer/" + phone + "/" + translation + "/" + toAdd + "/" + regionId);
                 }
             }
         });
