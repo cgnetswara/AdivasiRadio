@@ -212,8 +212,8 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 points = jsonObject.getInt("points");
                 progress = jsonObject.getInt("progress");
 
-                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + points);
-                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + progress);
+                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " + points);
+                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
 
 
                 streakBarTextView.setText(numberTranslated%numberForStreak + "/" + numberForStreak);
@@ -286,8 +286,8 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 points = jsonObject.getInt("points");
                 progress = jsonObject.getInt("progress");
 
-                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + points);
-                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + progress);
+                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " +  points);
+                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
                 phoneTextView.setText(getString(R.string.phoneTextViewStart) +  " " + phone);
 
             } catch (JSONException e) {
