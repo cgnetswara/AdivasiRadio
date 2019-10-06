@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.telecom.Call;
@@ -64,7 +65,9 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
         dashboard_activity = this;
 
         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE, Manifest.permission.INTERNET};
-        requestPermissions(permissions, WRITE_REQUEST_CODE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissions, WRITE_REQUEST_CODE);
+        }
 
         CardView mediaSwaraCardView = findViewById(R.id.mediaSwaraCardView);
         ImageView typeinGondiCardView = findViewById(R.id.ttsActivityNav);

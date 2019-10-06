@@ -75,13 +75,28 @@ public class TransDataCollectionActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.region_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        sharedPref = getPreferences(Context.MODE_PRIVATE);
         // Apply the adapter to the spinner
         regionSpinner.setAdapter(adapter);
+        regionSpinner.setSelection(sharedPref.getInt(getString(R.string.selected_region_id), 0)); // get selected region or default region
+        regionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt(getApplicationContext().getString(R.string.selected_region_id), i);
+                editor.apply();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
         streakBarTextView.setText(0 + "/" + numberForStreak);
 
-        sharedPref = getPreferences(Context.MODE_PRIVATE);
+
         phone = sharedPref.getString(getString(R.string.phone_number), "");
 
         if (phone.isEmpty()) {
@@ -122,6 +137,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                         isSteak = true; //making a streak builder
                     }
                     regionId = regionSpinner.getSelectedItemPosition();
+
                     submitTrans.execute(BASE_URL + "submitAnswer/" + phone + "/" + translation + "/" + toAdd + "/" + regionId);
                 }
             }

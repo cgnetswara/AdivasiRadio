@@ -272,6 +272,7 @@ public class MediaSwara extends AppCompatActivity {
             ArrayList<CardDetail> articles = new ArrayList<CardDetail>();
             try {
                 // Connect to the web site
+                Log.i("article_website", BASE_URL + pageCount);
                 Document document = Jsoup.connect(BASE_URL + pageCount).timeout(15000).get();
                 Log.i("lakjfdsl", document.toString());
                 // Get the html document articles
