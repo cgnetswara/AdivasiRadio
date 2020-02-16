@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.anuragShukla06.AdivasiRadio.BookRead">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/bookStackView">
+
+        </com.yuyakaido.android.cardstackview.CardStackView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backwardArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backward_arrow"
+                android:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ttsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tts_icon"
+                android:layout_marginHorizontal="40dp"
+                app:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/forwardArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/forward_arrow"
+                android:layout_margin="12dp"
+                android:backgroundTint="#D1C4E9"/>
+
+            <!--<ImageView-->
+            <!--android:id="@+id/backwardArrow"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/backward_arrow"/>-->
+            <!--<ImageView-->
+            <!--android:id="@+id/ttsButtonImageView"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/tts_icon"/>-->
+            <!--<ImageView-->
+            <!--android:id="@+id/forwardArrow"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/forward_arrow"/>-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

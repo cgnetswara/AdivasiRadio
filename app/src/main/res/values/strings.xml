@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">आदिवासी रेडियो</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="voice_list">आवाज सेटिंग्स</string>
+    <string name="eng_sample">This is a sample English sentence for Flite synthesizer.</string>
+    <string name="indic_sample">हिंदी भारत की राष्ट्रभाषा है।  मराठी ही महाराष्ट्र राज्याची अधिकृत भाषा आहे.</string>
+    <string name="flite_manager">Flite</string>
+    <string name="flite_voice_manager">TTS Voice Management</string>
+    <string name="voice_list_update">Download Voice List</string>
+    <string name="todo">TODO</string>
+    <string name="type_gondi_title">गोंडी में टाइप करें</string>
+    <string name="gondi_input">यहाँ देवनागरी में गोंडी लिखें</string>
+    <string name="speak_button_text">बोलो</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="book_title">अरे, इद सबय बोल तिन्जेतुड</string>
+
+    <!-- Temp -->
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="backdrop_title">ADIVASI RADIO</string>
+    <string name="backdrop_subtitle">Listen to articles on CGNet Swara</string>
+    <string name="loading_tag">लेख लोड हो रहे हैं...</string>
+    <string name="read_article">Read Article</string>
+    <string name="title_activity_library">संग्रह</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="book_section">पुस्तकालय</string>
+    <string name="recent_articles">पुराने लेख</string>
+    <string name="play_tag">play</string>
+    <string name="loading_text">loading_text</string>
+    <string name="pause_tag">pause_tag</string>
+    <string name="loading_audio_tag">loading_audio_tag</string>
+    <string name="favouritesSectionName">मेरी पसंद</string>
+    <string name="pratham_books">प्रथम बुक्स</string>
+    <string name="the_wire">द वायर</string>
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
+    <string name="empty_data_text">दिखाने के लिए कुछ भी नहीं</string>
+    <string name="media_swara">संदेश स्वर</string>
+    <string name="library">संग्रह</string>
+    <string name="no_internet_message">खराब या कोई इंटरनेट नहीं। कृपया कनेक्शन जांचेंं।</string>
+    <string name="callSwara">कॉल पर अपना संदेश रिकॉर्ड करने के लिए, कृपया नीचे दिया गया बटन दबाएं।</string>
+    <string name="phone_dialog_hint">Enter Your Phone Number (10 digits)</string>
+    <string name="progressTextViewStart">Translations: </string>
+    <string name="pointsTextViewStart">Points: </string>
+    <string name="rankTextViewStart">Rank: </string>
+    <string name="phone_number">phone_number</string>
+    <string name="phoneTextViewStart">Phone No:</string>
+    <string name="level0">Noobie</string>
+    <string name="level1">Gondi Learner</string>
+    <string name="level2">Gondi Expert</string>
+    <string name="level3">Elite</string>
+    <string name="level4">Global Elite</string>
+    <string name="selected_region_id">region_id</string>
+
+
+    <!-- we need to use video ids instead of video link -->
+    <string-array name="video_id_array">
+        <item>X2Nnco5myGQ</item>
+        <item>HYzVsXC4LuA</item>
+        <item>RY2Sx4ls5z0</item>
+        <item>Gz8OLWYmRp4</item>
+        <item>7pifGNJz078</item>
+        <item>LZFcsQCSFjA</item>
+        <item>pHcl2CXdiUc</item>
+        <item>TN4bWl3bUNI</item>
+        <item>zlYgOGotX6o</item>
+        <item>BLM8QRk7RQM</item>
+
+        <item>zgqENc6cFMg</item>
+        <item>IKlKI3ZFwxo</item>
+        <item>Sbov-o8PO-g</item>
+        <item>cGD8jGClGMY</item>
+    </string-array>
+
+    <string-array name="video_title_array">
+        <item>द वायर बुलेटिन गोंडी में (24 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (23 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (20 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (19 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (18 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (17 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (16 जुलाई 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (28 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (21 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (26 जून 2019)</item>
+
+        <item>द वायर बुलेटिन गोंडी में (25 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (24 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (27 जून 2019)</item>
+        <item>द वायर बुलेटिन गोंडी में (20 जून 2019)</item>
+
+    </string-array>
+
+    <string-array name="region_array">
+        <item>Not Sure</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>

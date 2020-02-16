@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.anuragShukla06.AdivasiRadio.MediaSwara">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loadingCard"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="5dp"
+        android:elevation="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="wrap_content"
+                android:layout_height="298dp"
+                android:layout_gravity="center"
+                android:src="@drawable/articles_loading" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_tag"
+                android:textColor="#000000"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD
+"
+            android:id="@+id/toolbar_media_swara">
+
+            <ImageView
+                android:id="@+id/backActivityImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_left_arrow"/>
+
+
+
+            <ImageView
+                android:id="@+id/favourite_button1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_heart"
+                android:layout_gravity="end"
+                android:layout_marginRight="20dp" />
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/cardStackView"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+        </com.yuyakaido.android.cardstackview.CardStackView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backwardArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backward_arrow"
+                android:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ttsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tts_icon"
+                android:layout_marginHorizontal="40dp"
+                app:backgroundTint="#D1C4E9"
+                android:layout_margin="12dp"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/forwardArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/forward_arrow"
+                android:layout_margin="12dp"
+                android:backgroundTint="#D1C4E9"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/backwardArrow"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/backward_arrow"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/ttsButtonImageView"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/tts_icon"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/forwardArrow"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:src="@drawable/forward_arrow"/>-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/no_internet_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="#ffffff">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/no_internet"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/no_internet_message"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

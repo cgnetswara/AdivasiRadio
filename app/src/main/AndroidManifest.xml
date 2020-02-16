@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.anuragShukla06.myapplication"
+    android:versionCode="2">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="whateverString"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:appComponentFactory">
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TransDataCollectionActivity"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.CallCGNetActivity" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.TheWire"
+            android:label="@string/the_wire" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.FavouritesActivity"
+            android:label="@string/favouritesSectionName" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.Dashboard" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.History_card_detail" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.RecentArticles"
+            android:label="@string/recent_articles" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.Library"
+            android:label="@string/library" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.BookRead"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.BookSection"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TypeGondi" /> <!-- <service -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.TTS_SERVICE" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.speech.tts" -->
+        <!-- android:resource="@xml/tts_engine" /> -->
+        <!-- </service> -->
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.MediaSwara"
+            android:parentActivityName="com.anuragShukla06.AdivasiRadio.Dashboard"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- <activity -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData" -->
+        <!-- android:label="@string/flite_voice_manager" -->
+        <!-- android:theme="@android:style/Theme.Material.Light"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.speech.tts.engine.INSTALL_TTS_DATA" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name="edu.cmu.cs.speech.tts.flite.CheckVoiceData" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.speech.tts.engine.CHECK_TTS_DATA" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name="com.anuragShukla06.AdivasiRadio.SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

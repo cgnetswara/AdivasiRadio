@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.anuragShukla06.AdivasiRadio.Library">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="2"
+        android:columnCount="2">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bookCardView"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#ffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:src="@drawable/pratham_books" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/pratham_books"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/wireCardView"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#E92D0A">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:src="@drawable/wire" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/the_wire"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/favouriteCardView"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#F7F7F7">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:src="@drawable/favourite_icon" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/favouritesSectionName"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/recentCardView"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#F7F7F7">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:src="@drawable/recent_icon" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/recent_articles"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+        <!--<Button-->
+            <!--android:id="@+id/bookButton"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/book_section"/>-->
+
+
+        <!--<Button-->
+            <!--android:id="@+id/articleButton"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/recent_articles"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/favouriteSection"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/favouritesSectionName"/>-->
+
+    <!--</LinearLayout>-->
+
+</RelativeLayout>
