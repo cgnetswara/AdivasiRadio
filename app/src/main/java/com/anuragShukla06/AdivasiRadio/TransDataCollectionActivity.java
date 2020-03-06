@@ -19,7 +19,6 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -140,7 +139,6 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 if (translation.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please provide an input", Toast.LENGTH_LONG).show();
                 } else{
-                    SubmitTrans submitTrans = new SubmitTrans();
                     numberTranslated += 1;
                     int toAdd = 1;
                     if (numberTranslated != 0 && numberTranslated%numberForStreak == 0) {
@@ -148,10 +146,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                         isSteak = true; //making a streak builder
                     }
                     regionId = regionSpinner.getSelectedItemPosition();
-
-//                    submitTrans.execute(BASE_URL + "submitAnswer/" + phone + "/" + translation + "/" + toAdd + "/" + regionId);
-                    String url = BASE_URL + "submitAnswer/";
-                    submitTranslation(url, phone, translation, toAdd, regionId);
+                    submitTranslation(BASE_URL+"/submitAnswer/", phone, translation, toAdd, regionId);
                 }
             }
         });
@@ -457,14 +452,12 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            QuestionFetch questionFetch = new QuestionFetch();
 //            questionFetch.execute(BASE_URL+ "fetchQuestion/" + phone);
 
             requestQuestion(QUESTION_URL, phone);
+//            questionFetch.execute(BASE_URL+ "fetchQuestion/" + phone);
         }
     }
-
-
 
 
     private class QuestionFetch extends AsyncTask<String, Void, String> {

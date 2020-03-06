@@ -202,7 +202,11 @@ public class Dashboard extends AppCompatActivity implements TextToSpeech.OnInitL
         int currentRate = 2;
         mTts.setSpeechRate((float) (currentRate + 1) / 3);
 
+<<<<<<< HEAD
 //        mTts.speak(text, mode, null, null);
+=======
+        mTts.speak(text, mode, null, null);
+>>>>>>> 724a7438450d7fa6929a1653d0099f2184bd5436
     }
 
 //    @Override
