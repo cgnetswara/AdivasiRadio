@@ -146,7 +146,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                         isSteak = true; //making a streak builder
                     }
                     regionId = regionSpinner.getSelectedItemPosition();
-                    submitTranslation(BASE_URL+"/submitAnswer/", phone, translation, toAdd, regionId);
+                    submitTranslation(BASE_URL+"submitAnswer/", phone, translation, toAdd, regionId);
                 }
             }
         });
