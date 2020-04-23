@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.florent37:arclayout:1.0.5@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-arclayout-1.0.5.aar/628b5f4d63c9a14eeeef30fcfe3b01e7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-arclayout-1.0.5.aar/628b5f4d63c9a14eeeef30fcfe3b01e7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-arclayout-1.0.5.aar/628b5f4d63c9a14eeeef30fcfe3b01e7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.florent37/arclayout/1.0.5/9b8e8a64916e5f24329ba1c1b7bf41391ff5344c/arclayout-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

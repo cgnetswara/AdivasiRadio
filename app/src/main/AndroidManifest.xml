@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.anuragShukla06.AdivasiRadio.TransDataCollectionActivity"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.Offline_Translation"></activity>
+        <activity android:name="com.anuragShukla06.AdivasiRadio.TransDataCollectionActivity" />
         <activity android:name="com.anuragShukla06.AdivasiRadio.CallCGNetActivity" />
         <activity android:name="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity" />
         <activity
@@ -83,6 +84,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.shuklaAnurag0006.AdivasiRadio"
+            android:name="data.AdivasiRadioProvider"
+            android:exported="false" />
     </application>
 
 </manifest>
