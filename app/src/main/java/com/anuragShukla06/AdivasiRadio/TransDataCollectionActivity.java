@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -41,7 +45,7 @@ import java.util.Map;
 
 public class TransDataCollectionActivity extends AppCompatActivity {
 
-    String BASE_URL = "http://gondi-data-collection.52kajbsigc.ap-south-1.elasticbeanstalk.com/";
+    static String BASE_URL = "http://gondi-data-collection.52kajbsigc.ap-south-1.elasticbeanstalk.com/";
     Button submitButton;
     TextView questionTextView;
     EditText transEditText;
@@ -51,7 +55,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
     TextView phoneTextView;
     TextView rankTextView; // Implement rank system
     Spinner regionSpinner;
-    String phone;
+    static String phone;
     int numberTranslated = 0;
     int regionId;
     int points;
@@ -62,14 +66,15 @@ public class TransDataCollectionActivity extends AppCompatActivity {
     TextView streakBarTextView;
     TextView rankBarTextView;
     RequestQueue MyRequestQueue;
-    String QUESTION_URL = BASE_URL+ "fetchQuestion/";
+    String QUESTION_URL = BASE_URL + "fetchQuestion/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trans_data_collection);
 
-        questionTextView = findViewById(R.id.questionTextView);;
+        questionTextView = findViewById(R.id.questionTextView);
+        ;
         submitButton = findViewById(R.id.submitButton);
         transEditText = findViewById(R.id.translationEditText);
         relativeLayout = findViewById(R.id.relativeLayout);
@@ -97,6 +102,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 editor.putInt(getApplicationContext().getString(R.string.selected_region_id), i);
                 editor.apply();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -136,47 +142,44 @@ public class TransDataCollectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String translation = transEditText.getText().toString();
-                if (translation.isEmpty()){
+                if (translation.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please provide an input", Toast.LENGTH_LONG).show();
-                } else{
+                } else {
                     numberTranslated += 1;
                     int toAdd = 1;
-                    if (numberTranslated != 0 && numberTranslated%numberForStreak == 0) {
+                    if (numberTranslated != 0 && numberTranslated % numberForStreak == 0) {
                         toAdd = 5;
                         isSteak = true; //making a streak builder
                     }
                     regionId = regionSpinner.getSelectedItemPosition();
-                    submitTranslation(BASE_URL+"submitAnswer/", phone, translation, toAdd, regionId);
+                    submitTranslation(BASE_URL + "submitAnswer/", phone, translation, toAdd, regionId);
                 }
             }
         });
 
     }
+
     void setRank(int points) {
         String text = "";
         int diff;
         if (points < 15) {
             text = getString(R.string.level0);
-            diff = 15-points;
-        }
-        else if (points < 40) {
+            diff = 15 - points;
+        } else if (points < 40) {
             text = getString(R.string.level1);
-            diff = 40-points;
-        }
-        else if (points < 125) {
+            diff = 40 - points;
+        } else if (points < 125) {
             text = getString(R.string.level2);
-            diff = 125-points;
-        }
-        else if (points < 170) {
+            diff = 125 - points;
+        } else if (points < 170) {
             text = getString(R.string.level3);
-            diff = 170-points;
-        }
-        else {
+            diff = 170 - points;
+        } else {
             text = getString(R.string.level4);
             diff = -1;
         }
 
-        rankTextView.setText(getString(R.string.rankTextViewStart) +   " " + text);
+        rankTextView.setText(getString(R.string.rankTextViewStart) + " " + text);
 
         if (diff != -1) {
             rankBarTextView.setText(diff + " points.");
@@ -220,12 +223,12 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                     progress = jsonObject.getInt("progress");
 
                     pointsTextView.setText(getResources().getString(R.string.pointsTextViewStart) + " " + points);
-                    progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
+                    progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " + progress);
 
                     setRank(points);
 
 
-                    streakBarTextView.setText(numberTranslated%numberForStreak + "/" + numberForStreak);
+                    streakBarTextView.setText(numberTranslated % numberForStreak + "/" + numberForStreak);
 
                     if (isSteak) {
                         buildStreakDialog();
@@ -239,8 +242,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                     transEditText.setText("");
 
 
-                    }
-                catch (JSONException ex) {
+                } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
             }
@@ -256,8 +258,8 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("phone", phone); //Add the data you'd like to send to the server.
                 params.put("answer", translation);
-                params.put("addPoint", toAdd+"");
-                params.put("regionId", regionId+"");
+                params.put("addPoint", toAdd + "");
+                params.put("regionId", regionId + "");
                 return params;
             }
         };
@@ -267,7 +269,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
 
     }
 
-    private void showphoneInputDialog(){
+    private void showphoneInputDialog() {
 
         final EditText phoneInput = new EditText(this);
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
@@ -295,16 +297,13 @@ public class TransDataCollectionActivity extends AppCompatActivity {
 
         // Overriding the button handler to let validate the data.
 
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener()
-        {
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 String inputPhone = phoneInput.getText().toString();
                 if (inputPhone.length() != 10) {
                     Toast.makeText(getApplicationContext(), "Please enter valid number", Toast.LENGTH_LONG).show();
-                }
-                else{
+                } else {
                     phone = inputPhone;
                     startRegistrationAndLoad();
                     SharedPreferences.Editor editor = sharedPref.edit();
@@ -332,7 +331,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
             StringBuilder result = new StringBuilder();
 
             try {
-                URL url = new URL( urls[0]);
+                URL url = new URL(urls[0]);
                 Log.i("URL_Built", urls[0]);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -340,7 +339,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 InputStreamReader reader = new InputStreamReader(inputStream);
                 int data = reader.read();
 
-                while(data != -1) {
+                while (data != -1) {
                     result.append((char) data);
                     data = reader.read();
                 }
@@ -363,13 +362,13 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 points = jsonObject.getInt("points");
                 progress = jsonObject.getInt("progress");
 
-                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " + points);
-                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
+                pointsTextView.setText(getResources().getString(R.string.pointsTextViewStart) + " " + points);
+                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " + progress);
 
                 setRank(points);
 
 
-                streakBarTextView.setText(numberTranslated%numberForStreak + "/" + numberForStreak);
+                streakBarTextView.setText(numberTranslated % numberForStreak + "/" + numberForStreak);
 
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
@@ -410,7 +409,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
             StringBuilder result = new StringBuilder();
 
             try {
-                URL url = new URL( urls[0]);
+                URL url = new URL(urls[0]);
                 Log.i("URL_Built", urls[0]);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -418,7 +417,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 InputStreamReader reader = new InputStreamReader(inputStream);
                 int data = reader.read();
 
-                while(data != -1) {
+                while (data != -1) {
                     result.append((char) data);
                     data = reader.read();
                 }
@@ -441,9 +440,9 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 points = jsonObject.getInt("points");
                 progress = jsonObject.getInt("progress");
 
-                pointsTextView.setText( getResources().getString(R.string.pointsTextViewStart) + " " +  points);
-                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " +  progress);
-                phoneTextView.setText(getString(R.string.phoneTextViewStart) +  " " + phone);
+                pointsTextView.setText(getResources().getString(R.string.pointsTextViewStart) + " " + points);
+                progressTextView.setText(getResources().getString(R.string.progressTextViewStart) + " " + progress);
+                phoneTextView.setText(getString(R.string.phoneTextViewStart) + " " + phone);
                 setRank(points);
 
             } catch (JSONException e) {
@@ -467,7 +466,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
             StringBuilder result = new StringBuilder();
 
             try {
-                URL url = new URL( urls[0]);
+                URL url = new URL(urls[0]);
                 Log.i("URL_Built", urls[0]);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -475,7 +474,7 @@ public class TransDataCollectionActivity extends AppCompatActivity {
                 InputStreamReader reader = new InputStreamReader(inputStream);
                 int data = reader.read();
 
-                while(data != -1) {
+                while (data != -1) {
                     result.append((char) data);
                     data = reader.read();
                 }
@@ -497,5 +496,21 @@ public class TransDataCollectionActivity extends AppCompatActivity {
             // Cover all failure cases here
             questionTextView.setText(s);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_translation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Offline_trans_button:
+                Intent intent = new Intent(getApplicationContext(), Offline_Translation.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

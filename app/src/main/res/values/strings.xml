@@ -52,6 +52,8 @@
     <string name="level3">Elite</string>
     <string name="level4">Global Elite</string>
     <string name="selected_region_id">region_id</string>
+    <string name="qNumTextView">Saved:</string>
+    <string name="ansNumTextView">Ready to upload:</string>
 
 
     <!-- we need to use video ids instead of video link -->

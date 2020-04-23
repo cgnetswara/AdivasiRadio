@@ -91,8 +91,11 @@ public class AdivasiRadioProvider extends ContentProvider {
             case DOWNLOAD:
                 rowId = db.insert(Question_Download_QUEUE.TABLE_NAME, null, contentValues);
                 break;
+            case UPLOAD:
+                rowId = db.insert(Translation_Upload_QUEUE.TABLE_NAME, null, contentValues);
+                break;
             default:
-                throw new IllegalArgumentException("Cannot query unknown URI: " + uri);
+                throw new IllegalArgumentException("Unknown URI: " + uri);
 
         }
         if (rowId == -1) {
@@ -110,6 +113,8 @@ public class AdivasiRadioProvider extends ContentProvider {
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         switch (match) {
+            case UPLOAD:
+                return db.delete(Translation_Upload_QUEUE.TABLE_NAME, null, null);
             case UPLOAD_ID:
                 selection = Translation_Upload_QUEUE.QUESTION_ID + "=?";
                 selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))};
