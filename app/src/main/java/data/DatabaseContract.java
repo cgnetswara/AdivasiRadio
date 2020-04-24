@@ -32,7 +32,7 @@ public class DatabaseContract {
     public static final class Question_Download_QUEUE implements BaseColumns {
 
         public  static final String TABLE_NAME = "Question_Download_QUEUE";
-        public static final int QUEUE_LIMIT = 4;
+        public static final int QUEUE_LIMIT = 100;
 
         public static final String QUESTION_ID = "Question_id";
         public static final String QUESTION_TEXT= "Question_text";

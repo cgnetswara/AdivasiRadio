@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.anuragShukla06.myapplication"
+    package="com.shuklaAnurag0006.myapplication"
     android:versionCode="2">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,31 +20,31 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.anuragShukla06.AdivasiRadio.Offline_Translation"></activity>
-        <activity android:name="com.anuragShukla06.AdivasiRadio.TransDataCollectionActivity" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.CallCGNetActivity" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.YoutubePlayerActivity" />
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.Offline_Translation"></activity>
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.TransDataCollectionActivity" />
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.CallCGNetActivity" />
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.YoutubePlayerActivity" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.TheWire"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.TheWire"
             android:label="@string/the_wire" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.FavouritesActivity"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.FavouritesActivity"
             android:label="@string/favouritesSectionName" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.Dashboard" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.History_card_detail" />
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.Dashboard" />
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.History_card_detail" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.RecentArticles"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.RecentArticles"
             android:label="@string/recent_articles" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.Library"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.Library"
             android:label="@string/library" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.BookRead"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.BookRead"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.BookSection"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.BookSection"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.anuragShukla06.AdivasiRadio.TypeGondi" /> <!-- <service -->
+        <activity android:name="com.shuklaAnurag0006.AdivasiRadio.TypeGondi" /> <!-- <service -->
         <!-- android:name="edu.cmu.cs.speech.tts.flite.FliteTtsService" -->
         <!-- android:label="@string/app_name"> -->
         <!-- <intent-filter> -->
@@ -56,8 +56,8 @@
         <!-- android:resource="@xml/tts_engine" /> -->
         <!-- </service> -->
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.MediaSwara"
-            android:parentActivityName="com.anuragShukla06.AdivasiRadio.Dashboard"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.MediaSwara"
+            android:parentActivityName="com.shuklaAnurag0006.AdivasiRadio.Dashboard"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- <activity -->
         <!-- android:name="edu.cmu.cs.speech.tts.flite.DownloadVoiceData" -->
         <!-- android:label="@string/flite_voice_manager" -->
@@ -76,7 +76,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name="com.anuragShukla06.AdivasiRadio.SplashScreen"
+            android:name="com.shuklaAnurag0006.AdivasiRadio.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

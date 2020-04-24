@@ -11,7 +11,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         android {
-            defaultConfig.applicationId = "com.anuragShukla06.AdivasiRadio"
+            defaultConfig.applicationId = "com.shuklaAnurag0006.AdivasiRadio"
         }
 
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/book_section_background"
-    tools:context="com.anuragShukla06.AdivasiRadio.FavouritesActivity">
+    tools:context="com.shuklaAnurag0006.AdivasiRadio.FavouritesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favouriteArticlesRecyclerView"

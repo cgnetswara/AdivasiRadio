@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/wire_background"
-    tools:context="com.anuragShukla06.AdivasiRadio.CallCGNetActivity">
+    tools:context="com.shuklaAnurag0006.AdivasiRadio.CallCGNetActivity">
 
     <TextView
         android:layout_width="wrap_content"

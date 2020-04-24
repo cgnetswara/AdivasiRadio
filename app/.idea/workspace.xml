@@ -11,15 +11,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1babb9b8-ba6a-4c90-b985-4acdb3d8707f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/menu/menu_translation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/AdivasiRadioProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/AdivasiRadioProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidTest/java/com/anuragShukla06/myapplication/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidTest/java/com/shuklaAnurag0006/myapplication/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/ArticleHistoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/ArticleHistoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookPageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookPageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/BookSectionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookSectionAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/CallCGNetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/CallCGNetActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/CardDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/CardDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/DataUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/FavouriteActivityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/FavouriteActivityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/FavouritesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/FavouritesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/History_card_detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/History_card_detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/MediaSwara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/MediaSwara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/NewsCardAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/NewsCardAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Offline_Translation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/RecentArticles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/RecentArticles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/SplashScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TheWire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/TheWire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/TransDataCollectionActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TypeGondi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/TypeGondi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/YoutubePlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/YoutubePlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/YoutubeVideoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/YoutubeVideoAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/YoutubeVideoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/YoutubeVideoModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/DatabaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/DatabaseContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_book_read.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_book_read.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_book_section.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_book_section.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_call_cgnet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_call_cgnet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_favourites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_favourites.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_media_swara.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_media_swara.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_the_wire.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_the_wire.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_type_gondi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_type_gondi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_youtube_player.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_youtube_player.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/anuragShukla06/myapplication/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shuklaAnurag0006/myapplication/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +65,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="6ee1977b7d14" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -44,106 +79,71 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Dashboard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="185" column="10" selection-start-line="185" selection-start-column="10" selection-end-line="185" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Offline_Translation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml">
+          <provider selected="true" editor-type-id="text-editor" />
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookRead.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="137" column="17" lean-forward="true" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-              <folding>
-                <element signature="e#345#5597#0" />
-                <element signature="e#2365#2389#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/AdivasiRadioProvider.java">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_trans_data_collection.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+            <state relative-caret-position="596">
+              <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Dashboard.java">
+        <entry file="file://$PROJECT_DIR$/../build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="196" column="58" lean-forward="true" selection-start-line="196" selection-start-column="58" selection-end-line="196" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="116">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/DatabaseContract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_trans_data_collection.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2716">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../build.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -180,12 +180,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/menu_translation.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/data/DatabaseContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/AdivasiRadioProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/data/DatabaseContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -198,11 +200,47 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <hideEmptyPackages AndroidView="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdivasiRadio-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdivasiRadio-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdivasiRadio-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdivasiRadio-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdivasiRadio-master" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -219,30 +257,33 @@
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="AdivasiRadio" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="data" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="shuklaAnurag0006" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="shuklaAnurag0006" type="462c0819:PsiDirectoryNode" />
+              <item name="AdivasiRadio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,15 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587617707793</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Feature Addition: Offline Translation">
+      <created>1587641502864</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587641502864</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3395973" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3395973" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -372,6 +419,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Find" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
@@ -379,7 +427,7 @@
       <window_info anchor="bottom" id="Build" order="4" weight="0.3611898" />
       <window_info anchor="bottom" x="23" y="296" width="1490" height="232" id="Logcat" order="5" weight="0.3286119" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.04249292" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.4716714" />
       <window_info anchor="bottom" id="Debug" order="8" />
       <window_info anchor="right" id="Preview" order="0" weight="0.3295302" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -391,54 +439,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Content Provider for offline database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Content Provider for offline database" />
+    <MESSAGE value="Feature Addition: Offline Translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature Addition: Offline Translation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/media_swara_menu.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/menu_translation.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/MediaSwara.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/MediaSwara.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="17" column="24" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -458,60 +490,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2074">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml">
       <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_trans_data_collection.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2716">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/AdivasiRadioProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+        <state relative-caret-position="1972">
+          <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_offline__translation.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/TransDataCollectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="137" column="17" lean-forward="true" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-          <folding>
-            <element signature="e#345#5597#0" />
-            <element signature="e#2365#2389#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/DatabaseContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/TransDataCollectionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="102">
           <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -519,13 +515,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuragShukla06/AdivasiRadio/Offline_Translation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/DatabaseContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="196" column="58" lean-forward="true" selection-start-line="196" selection-start-column="58" selection-end-line="196" selection-end-column="58" />
+        <state relative-caret-position="561">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/ArticleDbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/ArticleHistoryAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="185" column="10" selection-start-line="185" selection-start-column="10" selection-end-line="185" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_recent_articles.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/BookRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shuklaAnurag0006/AdivasiRadio/Offline_Translation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_trans_data_collection.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
         </state>
       </provider>
     </entry>
